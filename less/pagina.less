@@ -1,0 +1,54 @@
+body{
+    .main-container{
+        background-image:url("./img/graphy.png");
+    }
+}
+
+.pag{
+	width: @gridBaseContainer;
+	margin: 0 auto;
+	padding: @gridGutter 0;
+}
+
+footer{
+    background-color: @gris-oscuro;
+    color: @blanco;
+	width: @gridBaseContainer;
+	margin: 0 auto;
+	padding-top: @gridGutter;
+	line-height: @interlinea * .7;
+	border-top: 1px solid @borde;
+
+	p{
+		padding-top: @cuerpo; 
+		font-size: @cuerpo*.7;
+		letter-spacing: inherit;
+		
+		img{
+			display: inline-block;
+			margin-bottom: -4px;
+		}
+	}
+	
+	address{
+		font-size: @cuerpo * .7;
+		line-height: inherit;
+	}
+	
+	nav{
+		border: none;
+		line-height: inherit;
+		ul{
+			li{
+				margin-left: @gridGutter;
+				a{
+                    color: @blanco;
+					font-size: @cuerpo * .7;
+					padding: 4px 10px 4px 10px;
+					text-transform: none;
+					.border-radius(4px);
+				}
+			}
+		}
+	}
+}

@@ -1,18 +1,22 @@
 /* 
-	MADLAB - e[ad] 
-	Sitio web del Laboratorio de Modelado Asistido Digital
-	Desarrollado por Caterina Da Silva
+	MADLAB e[ad]
+    por Caterina Da Silva Arriagada
+    Elaboración del sitio web del MADLAB
+    Año 2014
 */
 
 
-/* Lo básico */
+// Básicos
+@import "reset.less";
+@import "variables.less";
+@import "funciones.less";
 
-@import "reset.less";					// Formateo del estilo
-@import "elementos.less";				// Los elementos primarios
-@import "funciones.less";				// Las funciones principales
+// Sistema de grilla y estructura
+@import "grilla.less";
+@import "pagina.less";                  // elementos de la página
+@import "patrones.less";				// bloques funcionales
+@import "interaccion.less";				// elementos de diálogo y uso
 
-/* Sistema de grilla y estructura */
-@import "grilla.less";                  // Lo esencial de la grilla
-@import "ladrillos.less";               // Construcción en base a la grilla
-
-/* Otros elementos */
+// Tipografía
+@import "auxiliares.less";				// dones comunes
+@import "type.less";					// valores tipográficos
