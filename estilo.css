@@ -244,11 +244,29 @@ body:after {
 body:after {
   clear: both;
 }
-.content {
+.ui {
   width: 100%;
   margin: 0 auto;
   padding: 0;
   background-image: url("img/graphy.png");
+}
+.ui img {
+  display: inline;
+  float: left;
+  width: 23.33333333%;
+  margin: 0 0.83333333%;
+  display: block;
+  float: none;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+}
+.ui header h3 {
+  text-align: center;
+  display: block;
+  float: none;
+  margin: 0;
 }
 header {
   *zoom: 1;
@@ -262,23 +280,6 @@ header:after {
 }
 header:after {
   clear: both;
-}
-header img {
-  display: inline;
-  float: left;
-  width: 73.33333333%;
-  margin: 0 0.83333333%;
-  display: block;
-  float: none;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-header h3 {
-  text-align: center;
-  display: block;
-  float: none;
-  margin: 0;
 }
 .page {
   display: block;
@@ -350,20 +351,6 @@ ul.meta li:last-of-type {
 }
 ul.meta li a {
   font-weight: bold;
-}
-.pizarra {
-  background-color: #ffffff;
-  color: rgba(0, 0, 0, 0.8);
-}
-.pizarra * {
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 100;
-}
-.pizarra a {
-  color: #34495e;
-}
-.pizarra a:hover {
-  background-color: rgba(52, 73, 94, 0.1);
 }
 nav {
   margin: 0 20;
@@ -498,9 +485,9 @@ a.btn:hover {
 button.btn:active,
 input[type='submit']:active,
 a.btn:active {
-  -webkit-box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 4px;
-  -moz-box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 4px;
-  box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 4px;
+  -webkit-box-shadow: inset rgba(51, 51, 51, 0.2) 0 0 4px;
+  -moz-box-shadow: inset rgba(51, 51, 51, 0.2) 0 0 4px;
+  box-shadow: inset rgba(51, 51, 51, 0.2) 0 0 4px;
 }
 button.btn.mini,
 input[type='submit'].mini,
@@ -643,7 +630,7 @@ form .btn {
   margin-top: 10;
 }
 form label {
-  color: #7f8c8d;
+  color: #bdc3c7;
   font-weight: bold;
   font-size: 13.6px;
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.6);

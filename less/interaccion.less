@@ -1,6 +1,7 @@
+//
 //	Elementos de Interacción:	
-//	Botones, formularios
-
+//	botones, formularios
+//
 *{
 	.transition(.2s ease all);
 }
@@ -34,7 +35,7 @@ a.btn
 
 	// cuando se aprieta el botón, que aparezca una sombra interior para que se vea hundido
 	&:active{
-		.box-shadow(inset fade(@negro, 20%) 0 0 4px);
+		.box-shadow(inset fade(@negro-claro, 20%) 0 0 4px);
 	}
 	
 	&.mini{
@@ -135,7 +136,7 @@ form{
 	.btn{margin-top: @gridGutter/2;}
 	
 	label{
-		color: @gris-oscuro;
+		color: @gris-claro;
 		font-weight: bold;
 		font-size: @cuerpo * .85;
 		text-shadow: -1px -1px 1px fade(@blanco, 60%);
