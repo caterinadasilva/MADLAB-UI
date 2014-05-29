@@ -244,7 +244,7 @@ body:after {
 body:after {
   clear: both;
 }
-.pag {
+.content {
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -266,7 +266,7 @@ header:after {
 header img {
   display: inline;
   float: left;
-  width: 48.33333333%;
+  width: 73.33333333%;
   margin: 0 0.83333333%;
   display: block;
   float: none;
@@ -280,12 +280,27 @@ header h3 {
   float: none;
   margin: 0;
 }
+.page {
+  display: block;
+  width: 98.36065574%;
+  margin: 0 -0.83333333%;
+  *zoom: 1;
+  margin: 0 auto;
+}
+.page:before,
+.page:after {
+  display: table;
+  content: "";
+}
+.page:after {
+  clear: both;
+}
 footer {
   background-color: #333333;
   color: #ffffff;
   width: 100%;
   margin: 0 auto;
-  padding-top: 40;
+  padding-top: 20;
   line-height: 2.8em;
 }
 footer p {
@@ -306,7 +321,7 @@ footer nav {
   line-height: inherit;
 }
 footer nav ul li {
-  margin-left: 40;
+  margin-left: 20;
 }
 footer nav ul li a {
   color: #ffffff;
@@ -322,7 +337,7 @@ ul.meta {
   vertical-align: top;
   text-align: right;
   font-size: 10px;
-  margin: -40 0 20 0;
+  margin: -20 0 10 0;
   padding: 0 20px;
 }
 ul.meta li {
@@ -351,7 +366,7 @@ ul.meta li a {
   background-color: rgba(52, 73, 94, 0.1);
 }
 nav {
-  margin: 0 40;
+  margin: 0 20;
   border-bottom: 1px solid #bdc3c7;
 }
 nav ul,
@@ -621,11 +636,11 @@ input[type='color'],
 }
 form {
   *zoom: 1;
-  margin-bottom: 40;
+  margin-bottom: 20;
 }
 form input[type='submit'],
 form .btn {
-  margin-top: 20;
+  margin-top: 10;
 }
 form label {
   color: #7f8c8d;
@@ -945,26 +960,26 @@ pre {
   font-weight: normal;
 }
 .margen-superior {
-  margin-top: 40;
+  margin-top: 20;
 }
 .margen-superior-negativo {
-  margin-top: -40;
+  margin-top: -20;
 }
 .margen-inferior {
-  margin-bottom: 40;
+  margin-bottom: 20;
 }
 .margen-inferior-grande {
   margin-bottom: 6.25%;
 }
 .margen-inferior-negativo {
-  margin-bottom: -40;
+  margin-bottom: -20;
 }
 .interno {
   margin-left: 0;
 }
 .margen-vertical {
-  margin-top: 40;
-  margin-bottom: 40;
+  margin-top: 20;
+  margin-bottom: 20;
 }
 .centrada,
 .centrado {
@@ -1083,7 +1098,7 @@ pre {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  height: 40;
+  height: 20;
 }
 .sombra {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 4px;
