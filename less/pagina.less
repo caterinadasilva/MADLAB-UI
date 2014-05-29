@@ -1,23 +1,38 @@
-body{
-    .main-container{
-        background-image:url("./img/graphy.png");
-    }
+.pag{
+	width: @total-width;
+	margin: 0 auto;
+	padding: 0;
+	background-image:url("./img/graphy.png");
 }
 
-.pag{
-	width: @gridBaseContainer;
-	margin: 0 auto;
-	padding: @gridGutter 0;
-}
+header {
+    .clearfix;
+    margin: 0 0 @em/8 0;
+    width:100%;
+    
+    img{
+        .column(20);
+        display:block;
+        float: none;
+        max-width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        }
+    h3{
+        text-align:center;
+        display:block;
+        float: none;
+        margin:0;
+        }
+    }
 
 footer{
-    background-color: @gris-oscuro;
+    background-color: @negro-claro;
     color: @blanco;
-	width: @gridBaseContainer;
+	width: @total-width;
 	margin: 0 auto;
 	padding-top: @gridGutter;
 	line-height: @interlinea * .7;
-	border-top: 1px solid @borde;
 
 	p{
 		padding-top: @cuerpo; 

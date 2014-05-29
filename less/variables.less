@@ -6,50 +6,45 @@
 // importar "Source Code Pro" en todos sus pesos y variantes
  @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
 
-// "Libre Baskerville"
+// importar "Libre Baskerville"
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+
+//importar "Varela Round"
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
 
 @sans:				"Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @serif:				"Libre Baskerville", Georgia, serif;
 @mono:				"Source Code Pro", Menlo, 'Courier New', Courier, monospace;
+@especial:          "Varela Round", 'Andale Mono', Courier, monospace;
 @tipografia:		@sans;
 
 
 // Grises
 @negro:				rgba(0, 0, 0, 1);
-@gris-oscuro:		lighten(@negro, 25%);
-@gris:				lighten(@negro, 50%);
-@gris-claro:		lighten(@negro, 75%);
+@negro-claro:		rgba(51, 51, 51,1.0);
+@gris-oscuro:       rgba(127, 140, 141,1.0);
+@gris:				rgba(149, 165, 166,1.0);
+@gris-claro:		rgba(189, 195, 199,1.0);
+@blanco-oscuro:     rgba(236, 240, 241,1.0);
 @blanco:			rgba(255, 255, 255, 1);
 
 // Colores
-@celeste:			rgba(87, 190, 255, .95);
-@azul:				rgba(30, 105, 180, .95);
-@azul-oscuro:		darken(@azul, 15%);
-@verde:				rgba(120, 170, 20, .95);
-@verde-claro:		lighten(@verde, 50%);
-@verde-oscuro:		darken(@verde, 15%);
-@rojo:				rgba(170, 0, 0, 1);
-@rojo-oscuro:		darken(@rojo, 20%);
-@amarillo:			rgba(220, 200, 40, .95);
-@ocre:				rgba(170, 160, 70, 1);
-
-// Especiales
-@pizarra:			rgba(50, 60, 70, 1);
-@ahuesado:			rgba(239, 242, 219, 1);
-@borde:				lighten(@gris-claro, 10%);
+@pregrado:			rgba(26, 188, 156,1.0);
+@titulo:			rgba(211, 84, 0,1.0);
+@postgrado:		    rgba(241, 196, 15,1.0);
+@academico:			rgba(41, 128, 185,1.0);
+@externo:		    rgba(155, 89, 182,1.0);
+@azul:		        rgba(52, 73, 94,1.0);
+@rojo:				rgba(192, 57, 43,1.0);
+@verde:             rgba(39, 174, 96,1.0);
+@twitter:		    rgba(64,153,255, 1.0);
+@facebook:			rgba(59,89,152, 1.0);
 
 // Links
-@base-url: "https://www.dropbox.com/sh/bdnqnb9m4i488yd/0D20pnb0kx";
-@link-color:		@ocre;
+@link-color:		@azul;
 @color-link:		@link-color;
-@link-colorHover:	@ocre;
-@color-opuesto:		spin(@link-color, 180);
 
 // Proporciones tipográficas
-@cuerpo:			12px;				// tamaño base en pixeles
+@cuerpo:			16px;				// tamaño base en pixeles
 @em: 				@cuerpo * 1em;		// atajo para salida en ems, ej. '12/@em'
-@interlinea:		@em * 1.81;
-
-@imagePath: "../img/";
-
+@interlinea:		@em / 4;

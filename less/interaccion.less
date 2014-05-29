@@ -22,7 +22,7 @@ a.btn
 	text-shadow: 1px 1px 0 fade(@blanco, 80%), -1px -1px 0 fade(@negro, 12%);
 	vertical-align: middle;
 	#gradient > .vertical-three-colors(lighten(@gris-claro, 22%), lighten(@gris-claro, 14%), 80%, lighten(@gris-claro, 8%));
-	border: 1px solid @borde;
+	border: 1px solid @gris-oscuro;
 	.border-radius(@radio);
 	.box-shadow(inset fade(@blanco, 80%) 1px 1px 1px);
 	
@@ -61,13 +61,13 @@ a.btn
 	&.accion{
 		color: @blanco;
 		text-shadow: 1px 1px 0 fade(@negro, 40%);
-		border-color: fade(@azul-oscuro, 20%);
+		border-color: fade(@verde, 20%);
 		
-		#gradient > .vertical(@celeste, @azul);
+		#gradient > .vertical(lighten(@verde, 35%), lighten(@verde, 5%));
 		.box-shadow(inset fade(@blanco, 40%) 1px 1px 1px);
 		
 		&:hover{
-			#gradient > .vertical(darken(@celeste, 10%), darken(@azul, 10%));
+			#gradient > .vertical(darken(@verde, 10%), darken(@verde, 10%));
 		}
 	
 	}
@@ -75,7 +75,7 @@ a.btn
 	&.alerta{
 		color: @blanco;
 		text-shadow: 1px 1px 0 fade(@negro, 40%);
-		border-color: fade(@rojo-oscuro, 20%);
+		border-color: fade(@rojo, 20%);
 		
 		#gradient > .vertical(lighten(@rojo, 35%), lighten(@rojo, 5%));
 		.box-shadow(inset fade(@blanco, 40%) 1px 1px 1px);

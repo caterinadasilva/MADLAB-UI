@@ -1,21 +1,5 @@
 //	Patrones
 
-
-header .iso{
-	margin: 0 0 0 @gridGutter;
-
-	h1{
-		.rojo;
-		font-size: 34px;
-		font-weight: 200;
-		margin-bottom: @interlinea/2;
-	}
-	h2{
-		font-size: 16px;
-		font-weight: 400;
-	}
-}
-
 ul.meta{
 
 	top: 0;
@@ -27,7 +11,7 @@ ul.meta{
 	
 	li{
 		display: inline;
-		border-right: 1px solid @borde;
+		border-right: 1px solid @blanco;
 		padding: 0 10px;
 		&:last-of-type{
 			border: none;
@@ -50,10 +34,10 @@ ul.meta{
 	}
 	
 	a{
-		color: @color-opuesto;
+		color: @color-link;
 	}
 	a:hover{
-		background-color: fade(@color-opuesto, 10%);
+		background-color: fade(@link-color, 10%);
 	}
 
 }
@@ -100,7 +84,6 @@ nav{
 
 .accordion {
     h5 {
-        color: @rojo-oscuro;
         text-decoration: underline;
         }
     h5:hover{
@@ -119,7 +102,7 @@ nav{
     }
     
 .destacado {
-    background-image: url("@{imagePath}/image.png");
+    background-image: url("./img/image.png");
     height: 500px;
     .box-shadow(fade(@negro, 10%) 0 0 12px);
 }

@@ -1,6 +1,5 @@
 // Tipografía
 
-
 * {
 	font-family: @tipografia;
 	font-weight: 400;
@@ -9,9 +8,6 @@
 	
 body{
 	font-size: @cuerpo;	
-    background-image: url("@{imagePath}/graphy.png");
-	background-size: 10px 10px;
-	background-repeat: repeat;
 }
 
 a{
@@ -19,7 +15,8 @@ a{
 	text-decoration: none;
 	
 	&:hover{
-		background-color: @ahuesado;
+		background-color: @link-color;
+		color: @blanco;
 		text-decoration: underline;
 	}
 	
@@ -101,26 +98,19 @@ div.poema{
 // --------
 
 h1, h2, h3, h4, h5, h6 {
-
-	font-weight: bold;
+	font-weight: 200;
 	color: @gris-oscuro;
 	margin: 0 0 @interlinea 0;
 	vertical-align: bottom;
-	
-	&.filete{
-		margin: 0 -@gridGutter;
-		padding: 0 @gridGutter;
-		border-bottom: 1px solid @borde;
-		.clearfix;
-	}
+	letter-spacing: @interlinea/24;
 }
 
-h1 {font-size: 32px;}
-h2 {font-size: 28px;}
-h3 {font-size: 22px;}
-h4 {font-size: 18px;}
-h5 {font-size: 16px;}
-h6 {font-size: 14px;}
+h1 {font-size: 60px;}
+h2 {font-size: 40px;}
+h3 {font-size: 30px;}
+h4 {font-size: 22px;}
+h5 {font-size: 18px;}
+h6 {font-size: 12px;}
 
 // Listas
 ul, ol {
@@ -212,9 +202,9 @@ code {
 	display: inline-block;
 	line-height: @interlinea * .666;
 	white-space: pre;
-	background-color: @ahuesado;
+	background-color: @blanco-oscuro;
 	padding: 0 1ex 0 1ex;
-	.box-shadow(inset 0 0 1px darken(@ahuesado, 30%));
+	.box-shadow(inset 0 0 1px darken(@blanco-oscuro, 30%));
 }
 
 pre {
@@ -234,7 +224,7 @@ pre {
 }
 
 .global{
-	width: @gridBaseContainer;
+	width: @total-width;
 	-moz-column-count: 3;
 	-moz-column-gap: 20px;
 	-webkit-column-count: 3;
@@ -255,7 +245,7 @@ pre {
 .tdc{
 	padding: @em @em*2;
 	color: @gris;
-	background-color: @ahuesado;
+	background-color: @blanco-oscuro;
 	.border-radius(1em / 5);
 	margin: 1em 0;
 }
@@ -267,4 +257,128 @@ pre {
 .estracto{
 	.chico;
 	line-height: @interlinea * 0.81;
+}
+
+// Estilos tipográficos auxiliares
+
+.gigante{
+	font-size: 600%;
+	letter-spacing: -.07ex;
+}
+
+.grande{
+	font-size: 250%;
+}
+
+.chico, 
+.chica{
+	font-size: 80%;
+}
+
+.color{
+	color: @link-color;
+}
+
+.uc{
+	text-transform: uppercase;
+}
+
+.fina, 
+.fino{
+	font-weight: 300;
+}
+
+.muy-fina,
+.muy-fino{
+	font-weight: 100;
+}
+
+.normal{
+	font-weight: normal;
+}
+	
+
+// Márgenes de ajuste
+.margen-superior{margin-top: @gridGutter}
+.margen-superior-negativo{margin-top: -@gridGutter}
+.margen-inferior{margin-bottom: @gridGutter}
+.margen-inferior-grande{margin-bottom: (@total-width/16)}
+.margen-inferior-negativo{margin-bottom: -@gridGutter}
+.interno{margin-left: 0} // para no acumular márgenes (@gridGutter) en columnas anidadas.
+.margen-vertical{.margen-superior; .margen-inferior}
+.centrada, .centrado{
+	text-align: center;
+	margin:  0 auto
+}
+
+.derecha{
+	float: right;
+	margin-right: 0;
+}
+
+// Grises
+
+.negro{color: @negro}
+.bg-negro{background-color: @negro}
+.negro-claro{color: @negro-claro}
+.bg-negro-claro{background-color: @negro-claro}
+.gris-oscuro{color: @gris-oscuro}
+.bg-gris-oscuro{background-color: @gris-oscuro}
+.gris{color: @gris}
+.bg-gris{background-color: @gris}
+.gris-claro{color: @gris-claro}
+.bg-gris-claro{background-color: @gris-claro}
+.blanco-oscuro{color: @blanco-oscuro}
+.bg-blanco-oscuro{background-color: @blanco-oscuro}
+.blanco{color: @blanco}
+.bg-blanco{background-color: @blanco}
+
+// Colores
+.pregrado{color: @pregrado}
+.bg-pregrado{background-color: @pregrado}
+.titulo{color: @titulo}
+.bg-titulo{background-color: @titulo}
+.postgrado{color: @postgrado}
+.bg-postgrado{background-color: @postgrado}
+.academico{color: @academico}
+.bg-academico{background-color: @academico}
+.externo{color: @externo}
+.bg-externo{background-color: @externo}
+.azul{color: @azul}
+.bg-azul{background-color: @azul}
+.verde{color: @verde}
+.bg-verde{background-color: @verde}
+.roja, .rojo{color: @rojo}
+.bg-rojo{background-color: @rojo}
+.twitter{color: @twitter}
+.bg-twitter{background-color: @twitter}
+.facebook{color: @facebook}
+.bg-facebook{background-color: @facebook}
+
+
+.caja{
+	display: block;
+	.border-radius(5px);
+	height: @gridGutter;
+}
+
+// Estilos auxiliares
+.sombra{
+	.box-shadow(fade(@negro, 15%) 0 0 4px);
+}
+
+.sombra-foco{
+	.box-shadow(fade(@azul, 55%) 0 0 4px);
+}
+
+.fulgor{
+	background-color: @blanco;
+	.box-shadow(0 0 10px @blanco);
+}
+
+.ver{
+	background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 3px 3px 3px 3px;
+    color: rgba(0, 0, 0, 0.3);
+    p{font-size: 10px}
 }
