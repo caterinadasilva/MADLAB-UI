@@ -1,0 +1,42 @@
+//
+// Typeahead
+// --------------------------------------------------
+
+.twitter-typeahead {
+  width: 100%;
+
+  .tt-query,
+  .tt-hint {
+    .form-control();
+  }
+
+  .tt-dropdown-menu {
+    width: 100%;
+    margin-top: 5px;    
+    border: 2px solid @brand;
+    padding: 5px 0;
+    color: @brand;
+    background-color: mix(@soft-grey, @brand, 20%);
+    border-radius: @border-radius-large;
+  }
+
+  .tt-suggestion {
+    p {
+      padding: 6px 14px;
+      font-size: ceil(@component-font-size-base * 0.933);
+      line-height: 1.429; // ~20px
+      margin: 0;
+    }
+
+    &:first-child,
+    &:last-child {
+      p {
+        padding: 6px 14px;
+      }
+    }
+    &.tt-is-under-cursor {
+      color: @inverse;
+      background-color: mix(@brand, black, 85%);
+    }
+  }
+}

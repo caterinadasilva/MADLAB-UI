@@ -1,0 +1,31 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+// Outer container
+.progress {
+  background: mix(@brand, white, 10%);
+  border-radius: @progress-height;
+  height: @progress-height;
+  .box-shadow(none);
+}
+
+// Bar of progress
+.progress-bar {
+  background: @brand;
+  line-height: @progress-height;
+  .box-shadow(none);
+}
+
+// Variations
+// -------------------------
+
+.progress-bar-success {
+  background-color: @success;
+}
+.progress-bar-warning {
+  background-color: @alert;
+}
+.progress-bar-danger {
+  background-color: @alert;
+}

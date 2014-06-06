@@ -1,61 +1,695 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]><html class="ie"><![endif]-->
-<!--[if gte IE 9]><!--><html><!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-		<meta name="author" content="Caterina Da Silva">
-		<title>MADLAB interfaz de usuario | Elementos básicos</title>
-		<link rel="stylesheet" href="estilo.css">
-		<!-- <script type="text/javascript" src="floating-1.12.js"></script>-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-	
-	<body lang="es">
-			<div class="ui">
-				<header>
-					<img src="img/MADLAB-logo.svg" class="ui">
-					<h3>interfaz de usuario</h3>
-				</header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="Caterina Da Silva">
+    <title>MADLAB interfaz de usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-				<div class="page">
-					<section class="titulo">
-						<h1>Elementos básicos</h1>
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap.css" rel="stylesheet">
 
-					</section> <!-- fin titulo-->
+    <!-- Loading MADLAB Flat UI -->
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="docs.css">
 
-					<section class="contenido">
-						<div class="fila">
-							<h2>Botones</h2>
-						</div>  <!-- fin parte entera-->
+    <link rel="shortcut icon" href="images/favicon.ico">
 
-						<div class="fila">
-							<h2>Menúes</h2>
-						</div>  <!-- fin parte entera-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="demo-headline">
+        <h1 class="demo-logo">
+          <div class="logo"></div>
+          <h5>Interfaz de Usuario</h5>
+        </h1>
+      </div> <!-- /demo-headline -->
 
-						<div class="fila">
-							<h2>Input</h2>
-						</div>  <!-- fin parte entera-->
+      <h2>Elementos Básicos</h1>
 
-						<div class="fila">
-							<h2>Tipografía</h2>
-						</div>  <!-- fin parte entera-->
 
-					</section> <!-- fin contenido-->
+      <h3>Botones</h3>
 
-					<section class="titulo">
-						<h1>Elementos complejos</h1>
-						<hr>
-					</section> <!-- fin titulo-->
-				</div> <!-- fin página-->
-				<footer>
-					<p><small>e[ad] de la <a href="http://www.ead.pucv.cl/">Escuela de Arquitectura y Diseño PUCV</a> está licenciado bajo <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/cl/">Creative Commons Atribución-No Comercial-Licenciar Igual 2.0 Chile License.</a></small></p>
-					<a href="http://creativecommons.org/licenses/by-nc-sa/2.0/cl/"><img src="http://i.creativecommons.org/l/by-nc-sa/2.0/cl/80x15.png"></a>
-				</footer>
-		</div>
-	</body>
+      <!-- B O T O N E S   N O R M A L E S -->
+      <!-- NORMALES -->
+      <div class="row first">
+      <h4>Básicos</h4>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-default">Botón por defecto</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-brand">Botón de marca</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-success">Botón de acierto</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-alert">Botón de alerta</a>
+        </div>
+      </div> <!-- /row -->
 
+      <!-- BOTONES con ICONO -->
+      <div class="row first">
+      <h4>Botones con ícono</h4>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-default"><span class="icon" data-icon="y"></span> Botón por defecto</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-brand"><span class="icon" data-icon="K"></span> Botón de marca</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-success"><span class="icon" data-icon="f"></span> Botón de acierto</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-alert"><span class="icon" data-icon="P"></span> Botón de alerta</a>
+        </div>
+      </div> <!-- /row -->
+
+      <!-- T A M A Ñ O S  DE  B O T O N E S -->
+      <!-- MUY GRANDE -->
+    
+      <div class="row first">
+        <h4>Tamaños de botones</h4>
+
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-hg btn-brand">Botón gigante</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-hg btn-brand"><span class="icon" data-icon="K"></span> Botón gigante</a>
+        </div>
+      </div> <!-- /row -->
+
+      <!-- GRANDE -->
+      <div class="row demo-row">
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-brand">Botón grande</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-brand"><span class="icon" data-icon="K"></span> Botón grande</a>
+        </div>
+      </div> <!-- /row -->
+
+      <!-- ESTANDAR -->
+            <div class="row demo-row">
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-sm btn-brand">Botón estándar</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-sm btn-brand"><span class="icon" data-icon="K"></span> Botón estándar</a>
+        </div>
+        </div> <!-- /row -->
+
+      <!-- PEQUEÑOS -->
+      <div class="row demo-row">
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-xs btn-brand">Botón chico</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#fakelink" class="btn btn-block btn-xs btn-brand"><span class="icon" data-icon="K"></span>Botón chico</a>
+        </div>
+      </div> <!-- /row -->
+
+
+       <!-- V A R I A N T E S  DE  B O T O N E S -->
+      <div class="row demo-row first">
+               <h4>Botón desactivados</h4>
+        <div class="col-md-6">
+          <a href="#fakelink" class="btn btn-block btn-lg btn-default disabled">Botón desactivado</a>
+        </div>
+      </div>
+      
+      <!-- M E N U   N O R M A L -->
+      <div class="row make-row first">
+              <h3>Menú</h3>
+        <div class="col-md-9">
+          <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+              <ul class="nav navbar-nav navbar-left">           
+                <li><a href="#fakelink">Menu Item<span class="navbar-unread">1</span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <b class="caret"></b></a>
+                  <span class="dropdown-arrow"></span>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+                <li><a href="#fakelink">About Us</a></li>
+               </ul>
+            </div><!-- /.navbar-collapse -->
+          </nav><!-- /navbar -->
+        </div>
+
+    <!-- M E N U   M E T A -->
+
+      <!-- M E N U   D R O P D O W N -->
+        <div class="col-xs-3">
+          <select name="herolist" value="X-Men" class="select-block">
+            <option value="0">Choose hero</option>
+            <option value="1">Spider Man</option>
+            <option value="2">Wolverine</option>
+            <option value="3">Captain America</option>
+            <option value="X-Men" selected="selected">X-Men</option>
+            <option value="Crocodile">Crocodile</option>
+          </select>
+        </div>
+      </div> <!-- /row -->
+
+        <div class="col-xs-6 col-xs-offset-1">
+          <h3>Navigation</h3>
+          <div class="row demo-navigation">
+            <div class="col-xs-6">
+              <div class="btn-toolbar">
+                <div class="btn-group">
+                  <a class="btn btn-primary" href="#fakelink"><span class="fui-time"></span></a>
+                  <a class="btn btn-primary" href="#fakelink"><span class="fui-photo"></span></a>
+                  <a class="btn btn-primary active" href="#fakelink"><span class="fui-heart"></span></a>
+                  <a class="btn btn-primary" href="#fakelink"><span class="fui-eye"></span></a>
+                </div>
+              </div> <!-- /toolbar -->
+            </div>
+            <div class="col-xs-6 demo-pager">
+              <ul class="pager">
+                <li class="previous">
+                  <a href="#fakelink">
+                    <span class="fui-arrow-left"></span>
+                    <span>All messages</span>
+                  </a>
+                </li>
+                <li class="next">
+                  <a href="#fakelink">
+                    <span class="fui-arrow-right"></span>
+                  </a>
+                </li>
+              </ul> <!-- /pager -->
+            </div>
+          </div> <!-- /demo-navigation -->
+
+          <div class="pagination">
+            <ul>
+              <li class="previous"><a href="#fakelink" class="fui-arrow-left"></a></li>
+              <li class="active"><a href="#fakelink">1</a></li>
+              <li><a href="#fakelink">2</a></li>
+              <li><a href="#fakelink">3</a></li>
+              <li><a href="#fakelink">4</a></li>
+              <li><a href="#fakelink">5</a></li>
+              <li><a href="#fakelink">6</a></li>
+              <li><a href="#fakelink">7</a></li>
+              <li><a href="#fakelink">8</a></li>
+              <li class="next"><a href="#fakelink" class="fui-arrow-right"></a></li>
+            </ul>
+          </div> <!-- /pagination -->
+        </div> <!-- /navigation -->
+
+
+     <!-- F O O T E R -->
+
+
+<!-- I N P U T -->
+      <h3>Input</h3>
+      <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <input type="text" value="" placeholder="Inactive" class="form-control" />
+            </div>          
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group has-error">
+            <input type="text" value="Error" class="form-control" />
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group has-success">
+            <input type="text" value="Success" class="form-control" />
+            <span class="input-icon fui-check-inverted"></span>
+          </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <input type="text" value="Disabled" disabled="disabled" class="form-control" />
+            </div>          
+        </div>
+      </div> <!-- /row -->
+
+      <!-- V A R I A N T E S  DE  I N P U T -->
+
+      <!-- SELECCION POR NUMERO -->
+      <!-- FECHA -->
+       <!-- AREA DE TEXTO -->
+       <!-- ETIQUETAS -->
+       <!-- AUTOCOMPLETAR -->
+
+      <div class="row">
+
+      <!-- A C C I O N -->
+
+        <div class="col-xs-5">
+          <h3 class="demo-panel-title">Progress bars &amp; Sliders</h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 45%;"></div>
+          </div>
+          <br/>
+          <div class="progress">
+            <div class="progress-bar" style="width: 40%;"></div>
+            <div class="progress-bar progress-bar-warning" style="width: 10%;"></div>
+            <div class="progress-bar progress-bar-danger" style="width: 10%;"></div>
+            <div class="progress-bar progress-bar-success" style="width: 10%;"></div>
+            <div class="progress-bar progress-bar-info" style="width: 10%;"></div>
+          </div>
+          <br/>
+          <div id="slider" class="ui-slider">
+            <div class="ui-slider-segment"></div>
+            <div class="ui-slider-segment"></div>
+            <div class="ui-slider-segment"></div>
+          </div>
+        </div> <!-- /sliders -->
+
+      <div class="row">
+        <div class="col-xs-3">
+          <h3 class="demo-panel-title">Checkboxes</h3>
+          <label class="checkbox" for="checkbox1">
+            <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+            Unchecked
+          </label>
+          <label class="checkbox" for="checkbox2">
+            <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
+            Checked
+          </label>
+          <label class="checkbox" for="checkbox3">
+            <input type="checkbox" value="" id="checkbox3" data-toggle="checkbox" disabled="">
+            Disabled unchecked
+          </label>
+          <label class="checkbox" for="checkbox4">
+            <input type="checkbox" checked="checked" value="" id="checkbox4" data-toggle="checkbox" disabled="" checked="">
+            Disabled checked
+          </label>
+        </div> <!-- /checkboxes col-xs-3 -->
+
+        <div class="col-xs-3">
+          <h3 class="demo-panel-title">Radio Buttons</h3>
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+            Radio is off
+          </label>
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio" checked="">
+            Radio is on
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="optionsRadiosDisabled" id="optionsRadios3" value="option2" data-toggle="radio" disabled="">
+            Disabled radio is off
+          </label>
+          <label class="radio">
+            <input type="radio" name="optionsRadiosDisabled" id="optionsRadios4" value="option2" data-toggle="radio" checked="" disabled="">
+            Disabled radio is on
+          </label>
+        </div> <!-- /radios col-xs-3 -->
+
+        <div class="col-xs-3">
+          <h3 class="demo-panel-title">Switches</h3>
+
+          <table width="100%">
+            <tr>
+              <td width="50%" class="pbm">
+                <input type="checkbox" checked="" data-toggle="switch" />
+              </td>
+
+              <td class="pbm">
+                <input type="checkbox" data-toggle="switch" />
+              </td>
+            </tr>
+            <tr>
+              <td class="pbm">
+                <div class="switch switch-square" data-on-label="<i class='fui-check'></i>" data-off-label="<i class='fui-cross'></i>">
+                      <input type="checkbox" />
+                    </div>
+              </td>
+
+              <td class="pbm">
+                <div class="switch switch-square" data-on-label="<i class='fui-check'></i>" data-off-label="<i class='fui-cross'></i>">
+                      <input type="checkbox" checked />
+                    </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" disabled data-toggle="switch" />
+              </td>
+
+              <td>
+                <input type="checkbox" checked disabled data-toggle="switch" />
+              </td>
+            </tr>
+          </table>
+        </div> <!-- /toggles col-xs-3 -->
+
+        <div class="col-xs-3">
+          <h3 class="demo-panel-title">Tags</h3>
+          <input name="tagsinput" id="tagsinput" class="tagsinput" value="Clean,Fresh,Modern,Unique" />
+        </div>
+      </div> <!-- /row -->
+
+        <div class="col-xs-3">
+          <div class="demo-tooltips">
+            <h3 class="demo-panel-title">Tooltips</h3>
+            <p align="center" data-toggle="tooltip" data-placement="bottom" title="Tooltip under the text."></p>
+            <p align="center" data-toggle="tooltip" title="Here is the sample of talltooltip that contains three lines or more. More."></p>
+          </div>
+        </div> <!-- /col-xs-3 with tooltips -->
+      </div> <!-- /row -->
+
+      
+      <!-- T I P O G R A F I A -->
+
+      <div class="demo-row typography-row">
+        <div class="demo-title">
+            <h3 class="demo-panel-title">Typography</h3>
+        </div>
+        <div class="demo-content">              
+            <div class="demo-type-example">
+                <h1><span class="demo-heading-note">Header 1</span>Showers across the W</h1>
+            </div>
+            <div class="demo-type-example">
+                <h2><span class="demo-heading-note">Header 2</span>Give this quartet a few</h2>
+            </div>
+            <div class="demo-type-example">
+                <h3><span class="demo-heading-note">Header 3</span>The Vatican transitions to a</h3>
+            </div>
+            <div class="demo-type-example">
+                <h4><span class="demo-heading-note">Header 4</span>Great American Bites: Telluride's Oak, The</h4>
+            </div>
+            <div class="demo-type-example">
+                <h5><span class="demo-heading-note">Header 5</span>Author Diane Alberts loves her some good</h5>
+            </div>
+            <div class="demo-type-example">
+                <h6><span class="demo-heading-note">Header 6</span>With the success of young-adult book-to-movie</h6>
+            </div>
+            <div class="demo-type-example">
+                <span class="demo-text-note">Paragraph</span>
+              <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <strong>Donec ullamcorper</strong> nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+            </div>
+            <div class="demo-type-example">
+                <span class="demo-text-note">Image</span>
+              <img src="images/exaple-image.jpg" alt="exaple-image" class="img-rounded img-responsive">
+              <p class="img-comment"><strong>Note:</strong> gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+            </div>
+            <div class="demo-type-example">
+                <span class="demo-text-note">Lead Text</span>
+                        <p class="lead">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            </div>
+            <div class="demo-type-example">
+                <span class="demo-text-note">Quote</span>
+              <blockquote>
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus.</p>
+                <small>Steve Jobs, CEO Apple</small>
+              </blockquote>
+            </div>
+            <div class="demo-type-example">
+                <span class="demo-text-note">Small Font</span>
+              <p><small>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</small></p>
+            </div>
+        </div><!-- /.demo-content-wide -->
+      </div><!-- /.demo-row -->
+
+      <!-- C O L O R E S-->
+
+      <h3 class="demo-panel-title">Color Swatches</h3>
+      <div class="row demo-swatches-row">
+          <div class="swatches-col">
+              <div class="pallete-item">
+                  <dl class="palette palette-black">
+                <dt>#000000</dt>
+                <dd>Black</dd>
+              </dl>
+
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-dark-grey">
+              <dt>#2ecc71</dt>
+              <dd>Emerald</dd>
+            </dl>
+            <dl class="palette palette-grey">
+              <dt>#27ae60</dt>
+              <dd>Nephritis</dd>
+            </dl>
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-soft-grey">
+              <dt>#3498db</dt>
+              <dd>Peter river</dd>
+            </dl>
+            <dl class="palette palette-dark-white">
+              <dt>#2980b9</dt>
+              <dd>Belize hole</dd>
+            </dl>
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-white">
+              <dt>#9b59b6</dt>
+              <dd>Amethyst</dd>
+            </dl>
+            <dl class="palette palette-brand">
+              <dt>#8e44ad</dt>
+              <dd>Wisteria</dd>
+            </dl>
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-success">
+              <dt>#34495e</dt>
+              <dd>Wet asphalt</dd>
+            </dl>
+            <dl class="palette palette-midnight-alert">
+              <dt>#2c3e50</dt>
+              <dd>Midnight blue</dd>
+            </dl>
+              </div>
+              <div class="pallete-item">
+              <dl class="palette palette-soft-black">
+                <dt>#333333</dt>
+                <dd>Soft black</dd>
+              </dl>
+
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-carrot">
+              <dt>#e67e22</dt>
+              <dd>Carrot</dd>
+            </dl>
+            <dl class="palette palette-pumpkin">
+              <dt>#d35400</dt>
+              <dd>Pumpkin</dd>
+            </dl>
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-alizarin">
+              <dt>#e74c3c</dt>
+              <dd>Alizarin</dd>
+            </dl>
+            <dl class="palette palette-pomegranate">
+              <dt>#c0392b</dt>
+              <dd>Pomegranate</dd>
+            </dl>
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-clouds">
+              <dt>#ecf0f1</dt>
+              <dd>Clouds</dd>
+            </dl>
+            <dl class="palette palette-silver">
+              <dt>#bdc3c7</dt>
+              <dd>Silver</dd>
+            </dl>
+              </div>
+              <div class="pallete-item">
+                  <dl class="palette palette-concrete">
+              <dt>#95a5a6</dt>
+              <dd>Concrete</dd>
+            </dl>
+            <dl class="palette palette-asbestos">
+              <dt>#7f8c8d</dt>
+              <dd>Asbestos</dd>
+            </dl>
+              </div>
+          </div> <!-- /swatches items -->
+          <div class="swatches-desc-col">
+              <h6 class="palette-headline">SWATCHES</h6>
+          <p class="palette-paragraph">
+            Colors &mdash; is almost the most important part of the <strong>Flat UI</strong>. Better to use different shades of provided colors than new.
+          </p>
+          <p class="palette-paragraph">
+            For your convenience we also provide <strong>Swatches Preset</strong> <span>(flat&#8209;ui&#8209;swatches.aco in the Pack folder).</span>
+          </p>
+          <p class="palette-paragraph">
+            <strong>No gradients, no shadows.</strong>
+          </p>
+          </div> <!-- /swatches desc -->
+      </div> <!-- /swatches row -->
+
+      <!-- I C O N O G R A F I A -->
+
+      <h3 class="demo-panel-title">Icons <small>(14)</small></h3>
+      <div class="demo-icons">        
+        <div class="demo-content">
+          <span class="fui-arrow-right"></span>
+          <span class="fui-arrow-left"></span>
+          <span class="fui-cmd"></span>
+          <span class="fui-check-inverted"></span>
+          <span class="fui-heart"></span>
+          <span class="fui-location"></span>
+          <span class="fui-plus"></span>
+          <span class="fui-check"></span>
+          <span class="fui-cross"></span>
+          <span class="fui-list"></span>
+          <span class="fui-new"></span>
+          <span class="fui-video"></span>
+          <span class="fui-photo"></span>
+          <span class="fui-volume"></span>
+          <span class="fui-time"></span>
+          <span class="fui-eye"></span>
+          <span class="fui-chat"></span>
+          <span class="fui-search"></span>
+          <span class="fui-user"></span>
+          <span class="fui-mail"></span>
+          <span class="fui-lock"></span>
+          <span class="fui-gear"></span>
+          <span class="fui-radio-unchecked"></span>
+          <span class="fui-radio-checked"></span>
+          <span class="fui-checkbox-unchecked"></span>
+          <span class="fui-checkbox-checked"></span>
+          <span class="fui-calendar-solid"></span>
+          <span class="fui-pause"></span>
+          <span class="fui-play"></span>
+          <span class="fui-check-inverted-2"></span>
+        </div>
+      </div> <!-- /icon font row -->
+
+
+      <!-- C O M P L E J O S -->
+
+      <h1 class="demo-section-title mbl pbl">Elementos complejos</h1>
+      <div class="row demo-samples">
+      </div>
+
+
+          <!-- C A J A S  DE  D E M O -->
+
+            <!-- V A R I E D A D  DE  C A J A S -->
+
+                <!-- P. DESTACADO -->
+                <!-- P. NORMAL -->
+                <!-- NOTICIA -->
+                <!-- EVENTO -->
+
+            <!-- T I P O S  DE  P R O Y E C T O -->
+
+                <!-- INVESTIGACION ACADEMICA -->
+                <!-- PREGRADO -->
+                <!-- TITULACION -->
+                <!-- POSTGRADO -->
+                <!-- EXTERNO -->
+
+            <!-- L I S T A D O S -->
+                <!-- PROYECTOS -->
+                <!-- EVENTOS -->
+                <!-- NOTICIAS -->
+                <!-- PERSONAS -->
+
+      <div class="row demo-tiles">
+        <div class="col-xs-3">
+          <div class="tile">
+            <img src="images/icons/svg/compas.svg" alt="Compas" class="tile-image big-illustration">
+            <h3 class="tile-title">Web Oriented</h3>
+            <p>100% convertable to HTML/CSS layout.</p>
+            <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
+          </div>
+        </div>
+
+        <div class="col-xs-3">
+          <div class="tile">
+            <img src="images/icons/svg/loop.svg" alt="Infinity-Loop" class="tile-image">
+            <h3 class="tile-title">Easy to Customize</h3>
+            <p>Vector-based shapes and minimum of layer styles.</p>
+            <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
+          </div>
+        </div>
+
+        <div class="col-xs-3">
+          <div class="tile">
+            <img src="images/icons/svg/pencils.svg" alt="Pensils" class="tile-image">
+            <h3 class="tile-title">Color Swatches</h3>
+            <p>Easy to add or change elements. </p>
+            <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
+          </div>
+        </div>
+
+        <div class="col-xs-3">
+          <div class="tile tile-hot">
+            <img src="images/icons/svg/chat.svg" alt="Chat" class="tile-image">
+            <h3 class="tile-title">Free for Share</h3>
+            <p>Your likes, shares and comments helps us.</p>
+            <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
+          </div>
+
+        </div>
+      </div> <!-- /tiles -->
+
+
+    <!--  A L E R T A S -->
+    <!-- M O D A L -->
+    <!-- F A N C Y B O X -->
+    <!-- C A R R U S E L -->
+    <!--  G A L E R I A  DE  I M A G E N E S -->
+    <!-- P E S T A Ñ A S -->
+        <!-- VERTICAL -->
+        <!-- HORIZONTAL --> 
+     <!--  M A P A S -->
+    <!--  C O M E N T A R I O S -->
+
+
+
+        <div class="col-xs-3">
+          <div class="demo-download">
+            <img src="images/demo/html-icon.png" src="Free PSD" />
+          </div>
+
+          <a href="#fakelink" class="btn btn-primary btn-lg btn-block">Descargar</a>
+
+          <p class="demo-download-text">EL MADLAB UI ES LO MEJOR :3</p>
+        </div>
+      </div> <!-- /download area -->
+
+    </div><!-- /.container -->
+
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.stacktable.js"></script>
+    <script src="http://vjs.zencdn.net/4.3/video.js"></script>
+    <script src="js/application.js"></script>
+  </body>
 </html>

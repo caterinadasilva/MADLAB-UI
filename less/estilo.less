@@ -1,21 +1,52 @@
-/* 
-	MADLAB e[ad]
-    por Caterina Da Silva Arriagada
-    Elaboración del sitio web del MADLAB
-    Año 2014
-*/
+// MADLAB
+// interfaz de usuario
+// índice de módulos
 
+// ## Basado en el estilo gráfico de DesignModo: "Flat UI Free"
+// ## http://designmodo.com/flat-free/
 
-// Básicos
-@import "reset.less";
-@import "variables.less";
-@import "funciones.less";
+// Carga de fuentes
+@import "ui/iconos";
 
-// Sistema de grilla y estructura
-@import "grilla.less";
-@import "pagina.less";                  // elementos de la página
-@import "patrones.less";				// bloques funcionales
-@import "interaccion.less";				// elementos de diálogo y uso
+// Configuración de variables de color y tamaños base
+@import "variables";
+@import "mixins";
+@import "ui/andamiaje";
 
-// Tipografía
-@import "tipografia.less";					// valores tipográficos
+// Módulos
+@import "ui/tipografia";
+@import "ui/codigo";
+@import "ui/miniaturas";
+
+// Interacción
+@import "ui/botones";
+@import "ui/botones-grupos";
+@import "ui/caret";
+@import "ui/seleccion";
+@import "ui/formularios";
+@import "ui/checkbox-radio";
+@import "ui/input-iconos";
+@import "ui/input-grupos";
+@import "ui/input-tags";
+@import "ui/typeahead";         //autocompletar
+@import "ui/navbar";
+@import "ui/progress-bars";
+@import "ui/slider";
+@import "ui/pager";
+@import "ui/pagination";
+@import "ui/tooltip";
+@import "ui/dropdown";
+@import "ui/switch";
+@import "ui/share";
+
+// Ejemplos
+@import "ui/palette";
+@import "ui/tile";
+
+@import "ui/footer";
+
+// Espacios
+@import "ui/espacios";
+
+// Extras
+@import "demo.less";

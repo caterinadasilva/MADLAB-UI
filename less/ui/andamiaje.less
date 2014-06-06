@@ -1,0 +1,69 @@
+//
+// = Andamiaje =
+// -------------
+
+
+// == Reset del Body ==
+// --------------------
+
+body {
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+  background-image:url("./img/graphy.png");
+  background-attachment:fixed;
+}
+
+
+
+// == Links ==
+// -----------
+
+a {
+  color: @link-color;
+  text-decoration: underline;
+  .transition(.25s);
+    
+  &:hover,
+  &:focus {
+    color: @inverse;
+    background-color: @link-hover-color;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+// == Imágenes ==
+// --------------
+
+// Puntas redondas
+.img-rounded {
+  border-radius: @border-radius-large;
+}
+
+// Previsualización de imágenes
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  padding: @thumbnail-padding;
+  line-height: @line-height-base;
+  background-color: @thumbnail-bg;
+  border: 2px solid @thumbnail-border;
+  border-radius: @thumbnail-border-radius;
+  .transition(all .25s ease-in-out);
+
+  // Keep them at most 100% wide
+  .img-responsive(inline-block);
+}
+
+// Descripción bajo la imagen
+.img-comment {
+  font-size: ceil(@font-size-base * 0.8333); // ~15px
+  line-height: 1.2;
+  font-style: italic;
+  margin: 24px 0;
+}

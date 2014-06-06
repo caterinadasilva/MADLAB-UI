@@ -1,50 +1,399 @@
-// Nombres y Variables
+//
+//  = Variables =
+// ---------------
 
-// importar "Source Sans Pro" en todos sus pesos y variantes
- @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,700italic,600italic,400italic,300italic,200italic,700,900,600,300,200);
+//
+// == Paleta de Colores ==
+//
 
-// importar "Source Code Pro" en todos sus pesos y variantes
- @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
+// === Grises ===
+@black:				rgba(0, 0, 0, 1);
+@soft-black:		rgba(51, 51, 51,1.0);
+@dark-grey:         rgba(127, 140, 141,1.0);
+@grey:				rgba(149, 165, 166,1.0);
+@soft-grey:		    rgba(189, 195, 199,1.0);
+@dark-white:        rgba(236, 240, 241,1.0);
+@white:			    rgba(255, 255, 255, 1);
 
-// importar "Libre Baskerville"
-@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+// === Colores de proyectos ===
+@turquoise:			rgba(26, 188, 156,1.0);
+@pumpkin:			rgba(211, 84, 0,1.0);
+@sunflower:		    rgba(241, 196, 15,1.0);
+@belize-hole:		rgba(41, 128, 185,1.0);
+@amethyst:		    rgba(155, 89, 182,1.0);
 
-//importar "Varela Round"
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+@color-pregrado:        @pumpkin;
+@color-titulo:          @sunflower;
+@color-postgrado:       @amethyst;
+@color-inv-academica:   @belize-hole;
+@color-externo:         @turquoise;
 
-@sans:				"Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@serif:				"Libre Baskerville", Georgia, serif;
-@mono:				"Source Code Pro", Menlo, 'Courier New', Courier, monospace;
-@especial:          "Varela Round", 'Andale Mono', Courier, monospace;
-@tipografia:		@sans;
+// === Colores del sitio ===
+@transparent:       rgba(0,0,0,0);
+@wet-asfalt:		rgba(52, 73, 94,1.0);
+@pomegranate:		rgba(192, 57, 43,1.0);
+@nephritis:         rgba(39, 174, 96,1.0);
 
-
-// Grises
-@negro:				rgba(0, 0, 0, 1);
-@negro-claro:		rgba(51, 51, 51,1.0);
-@gris-oscuro:       rgba(127, 140, 141,1.0);
-@gris:				rgba(149, 165, 166,1.0);
-@gris-claro:		rgba(189, 195, 199,1.0);
-@blanco-oscuro:     rgba(236, 240, 241,1.0);
-@blanco:			rgba(255, 255, 255, 1);
-
-// Colores
-@pregrado:			rgba(26, 188, 156,1.0);
-@titulo:			rgba(211, 84, 0,1.0);
-@postgrado:		    rgba(241, 196, 15,1.0);
-@academico:			rgba(41, 128, 185,1.0);
-@externo:		    rgba(155, 89, 182,1.0);
-@azul:		        rgba(52, 73, 94,1.0);
-@rojo:				rgba(192, 57, 43,1.0);
-@verde:             rgba(39, 174, 96,1.0);
 @twitter:		    rgba(64,153,255, 1.0);
 @facebook:			rgba(59,89,152, 1.0);
 
-// Links
-@link-color:		@azul;
-@color-link:		@link-color;
+@brand:             @wet-asfalt;
+@alert:             @pomegranate;
+@success:           @nephritis;
+@inverse:           @white;
 
-// Proporciones tipográficas
-@cuerpo:			16px;				// tamaño base en pixeles
-@em: 				@cuerpo * 1em;		// atajo para salida en ems, ej. '12/@em'
-@interlinea:		@em / 4;
+
+// === Links ===
+@link-color:		@wet-asfalt;
+@color-link:		@link-color;
+@link-hover-color:  @inverse;
+
+// == Andamiaje ==
+//
+//## Ajustes para algunos de los estilos más globales.
+
+@bg-color:          @white;
+@body-bg:           @bg-color;
+@text-color:        @black;
+
+// == Tipografía ==
+//
+//##  Ajustes de fuentes e interlínea para el texto principal, los títulos, y más.
+
+@sans:				"Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@mono:				"Source Code Pro", Menlo, 'Courier New', monospace;
+@especial:          "Varela Round", 'Andale Mono', Courier, monospace;
+@typography:		@sans;
+@font-size-base:    16px;
+
+@font-size-h1:              floor(@font-size-base * 3.444); // ~62px
+@font-size-h2:              ceil(@font-size-base * 2.889); // ~52px
+@font-size-h3:              ceil(@font-size-base * 2.222); // ~40px
+@font-size-h4:              ceil(@font-size-base * 1.611); // ~29px
+@font-size-h5:              floor(@font-size-base * 1.556); // ~28px
+@font-size-h6:              ceil(@font-size-base * 1.333); // ~24px
+
+@font-family-base:          @typography;
+@font-family-monospace:     @mono;
+@font-family-demo:          @typography;
+
+@line-height-base:          1.72222; // 31/18
+@line-height-computed:      floor(@font-size-base * @line-height-base); // ~31px
+
+@headings-font-family:      inherit;
+@headings-font-weight:      200;
+@headings-line-height:      2;
+@headings-color:            @grey;
+
+//** Tamaños de íconos
+@icon-tiny:             9px;
+@icon-normal:           12px;
+@icon-medium:           14px;
+@icon-large:            20px;
+
+
+// == Componentes
+//
+// ## Define el tamaño común del padding y el border-radius.
+
+//** Font-size común de los componentes
+@component-font-size-base:  ceil(@font-size-base * 0.833); // ~15px
+
+//** Border-radius
+@border-radius-small:       10px;
+@border-radius-base:        20px;
+@border-radius-large:       40px;
+
+
+// == Botones
+//
+//## Para todos los botones, degine los textos, fondos, font-size y altura.
+
+@btn-font-size-base:         @component-font-size-base;
+@btn-font-size-xs:           ceil(@component-font-size-base * 0.780);   // ~12px
+@btn-font-size-sm:           floor(@component-font-size-base * 0.867); // ~13px
+@btn-font-size-lg:           ceil(@component-font-size-base * 1.133);  // ~17px
+@btn-font-size-hg:           floor(@component-font-size-base * 1.467); // ~22px
+
+@btn-line-height-base:       1.4;   // ~21px
+@btn-line-height-hg:         1.227; // ~27px
+@btn-line-height-lg:         1.471; // ~25px
+@btn-line-height-sm:         1.385; // ~16px
+@btn-line-height-xs:         1.083; // ~13px
+
+@btn-social-font-size-base:   floor(@component-font-size-base * 0.867); // ~13px
+@btn-social-line-height-base: 1.077;  // ~14px
+
+@btn-font-weight:            400;
+@btn-bg:                     @transparent;
+
+@btn-default-color:         @grey;
+@btn-default-bg:            @btn-bg;
+@btn-hover-default-bg:      @soft-grey; 
+@btn-default-active:        mix(@grey, black, 85%);
+
+@btn-brand-color:           @brand;
+@btn-brand-bg:              @btn-bg;
+@btn-hover-brand-bg:        @brand; 
+@btn-brand-active:          mix(@brand, black, 85%);
+
+@btn-success-color:         @success;
+@btn-success-bg:            @btn-bg;
+@btn-hover-success-bg:      @success; 
+@btn-success-active:        mix(@success, black, 85%);
+
+@btn-alert-color:           @alert;
+@btn-alert-bg:              @btn-bg;
+@btn-hover-alert-bg:        @alert;
+@btn-alert-active:          mix(@alert, black, 85%);
+
+@btn-disabled-color:        @soft-grey;
+@btn-link-disabled-color:   @btn-disabled-color;
+
+// == Formularios ==
+//
+//## Asentando las variables de los formularios
+
+@input-font-size-base:      @component-font-size-base;
+@input-font-size-small:     floor(@component-font-size-base * 0.867); // ~13px
+@input-font-size-large:     ceil(@component-font-size-base * 1.133); // ~17px
+@input-font-size-huge:      floor(@component-font-size-base * 1.467); // ~22px
+
+@input-line-height-base:    1.467; // ~22px
+@input-line-height-small:   1.462; // ~19px
+@input-line-height-large:   1.235; // ~21px
+@input-line-height-huge:    1.318; // ~29px
+
+@input-icon-font-size:      ceil(@component-font-size-base * 1.333);  // ~20px       
+
+@input-bg:                  @white;
+@input-bg-disabled:         mix(@dark-white, @soft-grey, 20%);
+
+@input-height-small:        34px;
+@input-height-base:         40px;
+@input-height-large:        60px;
+@input-height-huge:         150px;
+
+@input-border-radius:       @border-radius-base;
+
+@legend-color:              inherit;
+
+
+// == Paginación ==
+//
+//##
+
+@pagination-color:           mix(@brand, white, 20%);
+
+
+// == Pager
+//
+//##
+
+@pager-padding:              9px 15px 10px;
+
+
+// == Barra de navegación
+//
+//##
+
+// === Básicos
+@zindex-navbar:              1000;
+@zindex-navbar-fixed:        1030;
+@navbar-height-base:         40px;
+@navbar-input-line-height:   1.4; // ~21px
+@navbar-margin-bottom:       @line-height-computed;
+@navbar-border-radius:       @border-radius-large;
+
+@navbar-default-bg:          @transparent;
+
+// === Links
+@navbar-default-link-color:           @brand;
+@navbar-default-link-hover-color:     @soft-grey;
+@navbar-default-link-hover-bg:        transparent;
+@navbar-default-link-active-color:    @brand;
+@navbar-default-link-active-bg:       transparent;
+@navbar-default-link-disabled-color:  @soft-black;
+@navbar-default-link-disabled-bg:     transparent;
+
+// Navbar nav carets
+@navbar-default-caret-color:          @navbar-default-link-color;
+@navbar-default-caret-hover-color:    @navbar-default-link-hover-color;
+@navbar-default-caret-active-color:   @navbar-default-link-active-color;
+
+// Navbar brand label
+@navbar-default-brand-color:          @navbar-default-link-color;
+@navbar-default-brand-hover-color:    @navbar-default-link-hover-color;
+@navbar-default-brand-hover-bg:       transparent;
+
+// Navbar toggle
+@navbar-default-toggle-color:         @navbar-default-link-color;
+@navbar-default-toggle-hover-color:   @navbar-default-link-hover-color;
+
+// Navbar formulario
+@navbar-default-form-placeholder:     spin(tint(@brand, 60%), 2);
+@navbar-default-form-icon:            desaturate(tint(@brand, 45%), 2%);
+@navbar-default-form-border:          shade(@navbar-default-bg, 3%);
+
+// == Dropdown Menu
+//
+//##
+
+@dropdown-background:        mix(@inverse, @brand, 94%);
+
+
+//== Iconbar
+//
+//##
+
+@iconbar-background:         mix(@brand, black, 85%);
+
+
+//== Progress bars
+//
+//##
+
+@progress-height:            20px;
+
+
+// == Slider
+//
+//##
+
+@slider-height:              15px;
+@slider-value-font-size:     floor(@component-font-size-base * 0.867); // ~13px;
+
+@slider-handle-bg:           mix(@brand, @grey, 85%);
+@slider-handle-hover-bg:     mix(@brand, white, 80%);
+@slider-handle-active-bg:    mix(@brand, black, 85%);
+
+@slider-range-bg:            @brand;
+
+@slider-segment-bg:          mix(desaturate(@brand, 15%), white, 20%);
+
+
+//== Switch
+//
+//##
+
+@switch-border-radius:       20px;
+@switch-width:               80px;
+
+
+//== Thumbnails
+//
+// ##
+
+//** Padding
+@thumbnail-padding:           5px;
+//** Color de fondo
+@thumbnail-bg:                mix(@brand, @inverse, 60%);
+//** Color de borde
+@thumbnail-border:            transparent;
+//** Radio de borde
+@thumbnail-border-radius:     @border-radius-large;
+
+//** Custom text color for thumbnail captions
+@thumbnail-caption-color:     @text-color;
+//** Padding around the thumbnail caption
+@thumbnail-caption-padding:   10px;
+
+
+//== Puntos de quiebre de los Media Querys
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+@screen-xs-min:               480px;
+
+// Small screen / tablet
+@screen-sm-min:               768px;
+
+// Medium screen / desktop
+@screen-md-min:               992px;
+
+// Large screen / wide desktop
+@screen-lg-min:               1200px;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:               (@screen-sm-min - 1);
+@screen-sm-max:               (@screen-md-min - 1);
+@screen-md-max:               (@screen-lg-min - 1);
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+@grid-columns:                12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:           20px;
+@grid-gutter:                 @grid-gutter-width;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint:       @screen-sm-min;
+//** Point at which the navbar begins collapsing.
+@grid-float-breakpoint-max:   (@grid-float-breakpoint - 1);
+
+// Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+@state-success-text:          @success;
+@state-success-bg:            @success;
+@state-success-border:        darken(spin(@state-success-bg, -10), 5%);
+
+@state-info-text:             @brand;
+@state-info-bg:               @brand;
+@state-info-border:           darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text:          @alert;
+@state-warning-bg:            @alert;
+@state-warning-border:        darken(spin(@state-warning-bg, -10), 5%);
+
+
+// Código
+//
+//##
+
+@code-color:                  @soft-grey;
+@code-bg:                     @dark-white;
+
+@kbd-color:                   @inverse;
+@kbd-bg:                      @brand;
+
+@pre-bg:                      @inverse;
+@pre-color:                   inherit;
+@pre-border-color:            mix(@brand, @inverse, 12%);
+@pre-scrollable-max-height:   340px;
+@pre-border-radius:           @border-radius-large;
+
+
+// Type
+//
+//##
+
+//** Text muted color
+@text-muted:                  @soft-grey;
+//** Abbreviations and acronyms border color
+@abbr-border-color:           @soft-grey;
+//** Headings small color
+@headings-small-color:        mix(@brand, @inverse, 12%);
+//** Blockquote small color
+@blockquote-small-color:      inherit;
+//** Blockquote border color
+@blockquote-border-color:     mix(@brand, @inverse, 12%);
+//** Page header border color
+@page-header-border-color:    mix(@brand, @inverse, 12%);
+
+
+// = Miscellaneous =
+//
+//##
+
+//** Hr border color
+@hr-border:                   mix(@brand, @inverse, 63%);
+
+//** Horizontal forms & lists
+@component-offset-horizontal: 180px;
