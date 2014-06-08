@@ -18,13 +18,17 @@
   &:hover,
   &:focus {
     outline: none;
-    color: @inverse;    
+    color: @soft-grey;
+    background-color: none;
+    
   }
 
   &:active,
   &.active {
     outline: none;
     .box-shadow(none);
+    color: @soft-grey;
+    background-color: none;
   }
 
   &.disabled,
@@ -43,8 +47,18 @@
     font-style: normal;
     font-weight: normal;
     line-height: 1;
-    font-size:     @icon-normal;
     margin-right:  @grid-gutter/2;
+    
+      &:hover,
+  &:focus {
+    outline: none;
+     }
+
+  &:active,
+  &.active {
+    outline: none;
+    .box-shadow(none);
+        }
     }
 }
 

@@ -70,6 +70,33 @@
       }
     }
   }
+  
+  .icon {
+    position: relative;
+    display: inline-block;
+    font-family: 'madlab';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size:  @icon-large;
+    margin-right:  0;
+    color: @soft-black;
+    border-radius: initial;
+    border: none;
+    
+      &:hover,
+  &:focus {
+    color: @soft-grey;
+    background-color: transparent;
+     }
+
+  &:active,
+  &.active {
+    color: @soft-grey;
+    background-color: transparent;
+        }
+    }
+  
 }
 
 .dropdown-toggle {

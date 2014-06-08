@@ -6,7 +6,8 @@
 
 .select {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: @grid-gutter/2;
+  border-radius: 0;
 
   // Select grid
   &[class*="span"] {
@@ -15,6 +16,7 @@
     }
     .btn {
       width: 100%; // Button should take all available space of its parent
+      border-radius: initial;
     }
   }
 
@@ -28,9 +30,12 @@
 
     .btn {
       width: 100%;
+      border-radius: initial;
+      
     }
     .dropdown-menu {
       width: 100%;
+      border-radius: initial;
     }
   }
   
@@ -39,6 +44,7 @@
   // --------------------------------------------------
   .btn {
     width: 220px; // Default select width until .span* is applied
+    border-radius: initial;
     
     // Huge
     &.btn-hg {
@@ -99,12 +105,13 @@
       margin-top: -3px;
     }
     .dropdown-toggle {
-      border-radius: @border-radius-large;
+      border-radius: initial;
     }
 
     // Dropdown menu
     .dropdown-menu {
       min-width: 100%;
+      border-radius: initial;
 
       dt {
         cursor: default;
@@ -117,6 +124,7 @@
         }
         > a {
           min-height: 20px;
+          border-radius: initial;
           
           &.opt {
             padding-left: 35px;

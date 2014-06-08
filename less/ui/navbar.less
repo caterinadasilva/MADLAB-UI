@@ -12,7 +12,9 @@
   min-height: @navbar-height-base;
   margin-bottom: @navbar-margin-bottom;
   border: none;
-  border-radius: @navbar-border-radius;
+  border-radius: initial;
+  margin-left: -20px;
+
 }
 
 // Navbar heading
@@ -38,30 +40,20 @@
 
 .navbar-collapse {
   box-shadow: none;
-  padding-right: 21px;
-  padding-left: 21px;  
+    padding: 0;
 
   @media (min-width: @grid-float-breakpoint) {
     // Account for first and last children spacing
-    .navbar-nav.navbar-left:first-child {
-      margin-left: -21px;
-      
-      > li:first-child a {
-        .border-left-radius(@navbar-border-radius);
-      }
+    .navbar-nav.navbar-left:first-child {      
     }
     .navbar-nav.navbar-right:last-child {
-      margin-right: -21px;
       
       .navbar > .container & {
-        margin-right: -36px;
       }
       > .dropdown:last-child > a {
-        border-radius: 0 @navbar-border-radius @navbar-border-radius 0;
       }      
     }  
     .navbar-form.navbar-right:last-child {
-      margin-right: -17px;
 
       .navbar-fixed-top &,
       .navbar-fixed-bottom & {
@@ -84,9 +76,9 @@
 .container-fluid {
   > .navbar-header,
   > .navbar-collapse {
-    margin-right: -21px;
-    margin-left:  -21px;
-
+    margin-right: 0;
+    margin-left:  0;
+    
     @media (min-width: @grid-float-breakpoint) {
       margin-right: 0;
       margin-left:  0;
@@ -104,14 +96,12 @@
 .navbar-static-top {
   z-index: @zindex-navbar;
   border-width: 0;
-  border-radius: 0;
 }
 
 // Fix the top/bottom navbars when screen real estate supports it
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: @zindex-navbar-fixed;
-  border-radius: 0;
 }
 .navbar-fixed-top {
   border-width: 0;
@@ -127,7 +117,7 @@
   font-size: floor(@component-font-size-base * 1.6); // ~24px
   line-height: 1.042;  // ~25px
   font-weight: 700;
-  padding: ((@navbar-height-base - 25px) / 2) 21px;
+  padding: ((@navbar-height-base - 25px) / 2) 0;
   
   > [class*="fui-"] {
     font-size: floor(@component-font-size-base * 1.267); // ~19px
@@ -138,7 +128,7 @@
   @media (min-width: @grid-float-breakpoint) {
     .navbar > .container &,
     .navbar > .container-fluid & {
-      margin-left: -21px;
+      margin-left: -20px;
     }
   }
 }
@@ -152,12 +142,12 @@
   border: none;
   color: @brand;
   margin: 0 0 0 21px;
-  padding: 0 21px;
+  padding: 0;
   height: @navbar-height-base;
   line-height: @navbar-height-base;
 
   &:before {
-    color: @link-color;
+    color: @navbar-default-link-color;
     content: "h";
     font-family: "madlab";
     font-size: floor(@component-font-size-base * 1.467); // ~22px
@@ -169,6 +159,7 @@
   &:hover,
   &:focus {
     outline: none;
+    color: @navbar-default-link-color;
   
     &:before {
       color: @link-hover-color;
@@ -193,26 +184,35 @@
   
   > li > a {
     font-size: floor(@component-font-size-base * 1.067); // ~16px
-    padding: ((@navbar-height-base - 23px) / 2) 21px;
-    line-height: 23px;
-    font-weight: 700;
+    padding: @grid-gutter/2;
+    padding-left: 10 20 10 0;
+    line-height: 20px;
+    font-weight: 300;
+    text-transform:uppercase;
+    font-variant:small-caps;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: @navbar-default-link-color;
   }
   
   .dropdown-toggle .caret {
-    border-top-color: @link-color;
-    border-bottom-color: @link-color;
+    border-top-color: @navbar-default-link-color;
+    border-bottom-color: @navbar-default-link-color;
     border-width: 8px 6px 0;
-    margin-left: 12px;
+    margin-left: @grid-gutter/2;
   }
   > li > a:hover,
   > li > a:focus,
   .open > a:focus,
   .open > a:hover {
     background-color: transparent;
+    color: @navbar-default-link-color;
+    border-bottom: 3px solid @navbar-default-link-color;
+    opacity: 0.8;
     
     .caret {
-      border-top-color: @link-hover-color;
-      border-bottom-color: @link-hover-color;
+      border-top-color: @navbar-default-link-color;
+      border-bottom-color: @navbar-default-link-color;
     }
   }
   
@@ -229,13 +229,13 @@
   }
   
   @media (max-width: @grid-float-breakpoint-max) {
-    margin: 0 -21px;
+    margin: 0 -20px;
     
     // Dropdowns get custom display when collapsed
     .open .dropdown-menu {      
       > li > a,
       .dropdown-header {
-        padding: 7px 15px 7px 31px !important;
+        padding: @grid-gutter/2 0 @grid-gutter/2 @grid-gutter !important;
       }
       > li > a {
         line-height: 23px;
@@ -248,81 +248,12 @@
   }
 }
 
-// Navbar form
-//
-// Extension of the `.form-inline` with some extra flavor for optimum display in
-// our navbars.
-
-.navbar-input {
-  .input-size(@input-height-small; 5px; 10px; @input-font-size-small; @navbar-input-line-height);
-}
-
-.navbar-form {
-  .box-shadow(none);
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-right: 19px;
-  padding-left: 19px;
-
-  // Vertically center in expanded, horizontal navbar
-  .navbar-vertical-align(@input-height-small);
-
-  .form-group {
-    @media (max-width: @grid-float-breakpoint-max) {
-      margin-bottom: 5px;
-    }
-  }
-  
-  @media (max-width: @grid-float-breakpoint-max) {
-    margin: 3px -21px;
-    width: auto;
-  }
-  
-  .navbar-nav + &.navbar-left,
-  &.navbar-right:last-child { // Width fix for Webkit and IE11
-    @media (min-width: @grid-float-breakpoint) {
-      width: 260px; 
-    }
-  }
-  
-  // Controls sizing
-  .form-control,
-  .input-group-addon,
-  .btn { .navbar-input(); }
-  
-  // Reset rounded corners
-  .form-controls-corners-reset();
-  
-  .form-control {
-    font-size: @component-font-size-base;
-    border-radius: 5px;
-    display: table-cell;
-  }
-  .form-group + .btn {
-    font-size: @component-font-size-base;
-    border-radius: 5px;
-    margin-left: 4px;
-  }
-
-  @media (max-width: @grid-float-breakpoint-max) {
-    .form-group {
-      margin-bottom: 0;
-      
-      & + .btn {
-        margin-top: 9px;
-        margin-left: 0;
-      }
-    }
-  }
-}
-
 // Dropdown menus
 
 // Menu position and menu carets
 .navbar-nav > li {
   > .dropdown-menu {
-    min-width: 100%;
-    border-radius: @border-radius-base;   
+    min-width: 100%;   
     
     @media (max-width: @grid-float-breakpoint-max) {
       .transition(all 0s);
@@ -339,7 +270,6 @@
 
 // Menu position and menu caret support for dropups via extra dropup class
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  .border-bottom-radius(@border-radius-base);
 }
 
 .navbar-nav > .open > .dropdown-toggle,
@@ -348,90 +278,6 @@
   background-color: transparent;
 }
 
-// Text in navbars
-//
-// Add a class to make any element properly align itself vertically within the navbars.
-
-.navbar-text {
-  font-size: floor(@component-font-size-base * 1.067); // ~16px
-  line-height: 1.438; // ~23px
-  color: @brand;
-  margin-top: 0;
-  margin-bottom: 0;
-  
-  .navbar-vertical-align(23px, @navbar-height-base);
-
-  @media (min-width: @grid-float-breakpoint) {
-    margin-left: 21px;
-    margin-right: 21px;
-
-    // Outdent the form if last child to line up with content down the page
-    &.navbar-right:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
-// Buttons in navbars
-//
-// Vertically center a button within a navbar (when *not* in a form).
-
-.navbar-btn {
-  margin-top: ((@navbar-height-base - @input-height-base) / 2);
-  margin-bottom: ((@navbar-height-base - @input-height-base) / 2);
-
-  &.btn-sm {
-    margin-top: ((@navbar-height-base - @input-height-small) / 2);
-    margin-bottom: ((@navbar-height-base - @input-height-small) / 2) - 1;
-  }
-  &.btn-xs {
-    margin-top: ((@navbar-height-base - 25) / 2);
-    margin-bottom: ((@navbar-height-base - 25) / 2);
-  }
-}
-
-// Unread icon
-//
-.navbar-unread,
-.navbar-new {
-  font-family: @font-family-base;
-  background-color: @brand;
-  border-radius: 50%;
-  color: @inverse;
-  font-size: 0;
-  font-weight: 700;
-  height: 6px;
-  line-height: 1;
-  position: absolute;
-  right: 12px;
-  text-align: center;
-  top: 35%;
-  width: 6px;
-  z-index: 10;
-  
-  @media (max-width: @grid-float-breakpoint) {
-    position: static;
-    float: right;
-    margin: 0 0 0 10px;
-  }
-
-  .active & {
-    background-color: @inverse;
-    display: none;
-  }
-}
-
-.navbar-new {
-  background-color: @alert;
-  font-size: 12px;
-  height: 18px;
-  line-height: 17px;
-  margin: -6px -10px;
-  min-width: 18px;
-  padding: 0 1px;
-  width: auto;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
 
 // Alternate navbars
 // --------------------------------------------------
@@ -448,6 +294,7 @@
       background-color: @navbar-default-brand-hover-bg;
     }
   }
+ 
   
   .navbar-toggle {
     &:before {
@@ -483,7 +330,7 @@
       &,
       &:hover,
       &:focus {
-        color: @navbar-default-link-active-color;
+        color: @navbar-default-link-active-bg;
         background-color: @navbar-default-link-active-bg;
       }
     }
@@ -522,7 +369,7 @@
       &:hover,
       &:focus {
         background-color: @navbar-default-link-active-bg;
-        color: @navbar-default-link-active-color;
+        color: @navbar-default-link-active-bg;
         .caret {
           border-top-color: @navbar-default-caret-active-color;
           border-bottom-color: @navbar-default-caret-active-color;
@@ -546,7 +393,7 @@
           &,
           &:hover,
           &:focus {
-            color: @navbar-default-link-active-color;
+            color: @navbar-default-link-active-bg;
             background-color: @navbar-default-link-active-bg;
           }
         }
@@ -561,40 +408,134 @@
       }
     }
   }
-  
-  .navbar-form {
-    .form-control {
-      border-color: transparent;
-      .placeholder(@navbar-default-form-placeholder);
-      
-      &:focus {
-        border-color: @brand;
-         color: @brand;
-      }
-    }
-    .input-group-btn .btn {
-      border-color: transparent;
-      color: @navbar-default-form-icon;
-    }
-    .input-group.focus {
-      .form-control,
-      .input-group-btn .btn {
-         border-color: @brand;
-         color: @brand;
-      }     
-    }
-  }
-  
-  .navbar-text {
-    color: @brand;
+}
+
+.navbar-meta {
+    .pregrado{> li > a {background-color: @color-pregrado;}}
+    .titulo{> li > a {background-color: @color-titulo;}}
+    .postgrado{> li > a {background-color: @color-postgrado;}}
+    .inv-academica{> li > a {background-color: @color-inv-academica;}}
+    .externo{> li > a {background-color: @color-externo;}}
     
-    a {
-      color: @navbar-default-link-color;
-      
+    .navbar-nav {
+    .icon{
+        font-size: @icon-medium;
+    } 
+        
+    > li > a {
+        font-family: @mono;
+        color: @inverse;
+        border-right: 1px solid @dark-white;
+        text-transform: none;
+        font-variant: normal;
+        height: @grid-gutter*2;
+        
       &:hover,
       &:focus {
-        color: @navbar-default-link-hover-color;
+        color: @inverse;
+        border-bottom: none;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @inverse;
       }
     }
   }
+}
+
+//
+// Dropdown
+// --------------------------------------------------
+
+.dropdown-menu {
+  background-color: @dropdown-background;
+  color: @dropdown-color;
+  border: none;
+  display: block;
+  margin-top: 8px;
+  opacity: 0;
+  padding: 0;
+  visibility: hidden;
+  .box-shadow(none);
+  .transition(.25s);
+  
+.divider {
+    margin:5px;
+  }
+
+  // Opened state
+  .open > & {
+    margin-top: 0 !important;
+    opacity: 0.8;
+    visibility: visible;
+  }
+  
+  li {
+
+    &.active,
+    &.selected {
+      > a,
+      > a.highlighted {
+        background: none;
+        color: @dropdown-color;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+          background: none;
+          color: @dropdown-color;
+          
+        }
+      }
+    }
+      
+    > a {
+      color: @dropdown-color;
+      text-decoration: none;
+      .clearfix();
+      .transition(background-color .25s);
+      padding: 5px !important;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: none;
+        color: inherit;
+        outline: none;
+        text-decoration: underline;
+      }
+
+      &.highlighted {
+        background: mix(@dropdown-background, @soft-black, 1%);
+
+        &:hover,
+        &:focus {
+        background: mix(@dropdown-background, @soft-black, 1%);
+        }
+      }
+      &:before {
+        float: right;
+        margin-top: 3px;
+      }
+    }
+    }
+}
+
+
+// Dropdown expands to top
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  .dropdown-menu {
+    margin-bottom: 8px;
+  }
+  
+  .dropdown-arrow {
+    border-bottom: none;
+    border-top: 8px outset mix(@inverse, @brand, 94%);
+    bottom: 100%;
+    top: auto;
+    }
 }

@@ -22,8 +22,8 @@
 @belize-hole:		rgba(41, 128, 185,1.0);
 @amethyst:		    rgba(155, 89, 182,1.0);
 
-@color-pregrado:        @pumpkin;
-@color-titulo:          @sunflower;
+@color-pregrado:        @sunflower;
+@color-titulo:          @pumpkin;
 @color-postgrado:       @amethyst;
 @color-inv-academica:   @belize-hole;
 @color-externo:         @turquoise;
@@ -88,8 +88,8 @@
 //** Tamaños de íconos
 @icon-tiny:             9px;
 @icon-normal:           12px;
-@icon-medium:           14px;
-@icon-large:            20px;
+@icon-medium:           18px;
+@icon-large:            30px;
 
 
 // == Componentes
@@ -202,27 +202,27 @@
 @zindex-navbar-fixed:        1030;
 @navbar-height-base:         40px;
 @navbar-input-line-height:   1.4; // ~21px
-@navbar-margin-bottom:       @line-height-computed;
+@navbar-margin-bottom:       @grid-gutter*2;
 @navbar-border-radius:       @border-radius-large;
 
 @navbar-default-bg:          @transparent;
 
 // === Links
-@navbar-default-link-color:           @brand;
-@navbar-default-link-hover-color:     @soft-grey;
-@navbar-default-link-hover-bg:        transparent;
-@navbar-default-link-active-color:    @brand;
-@navbar-default-link-active-bg:       transparent;
-@navbar-default-link-disabled-color:  @soft-black;
-@navbar-default-link-disabled-bg:     transparent;
+@navbar-default-link-color:           @soft-black;
+@navbar-default-link-hover-color:     transparent;
+@navbar-default-link-hover-bg:        @soft-grey;
+@navbar-default-link-active-color:    @inverse;
+@navbar-default-link-active-bg:       @soft-grey;
+@navbar-default-link-disabled-color:  @grey;
+@navbar-default-link-disabled-bg:     @soft-grey;
 
 // Navbar nav carets
 @navbar-default-caret-color:          @navbar-default-link-color;
-@navbar-default-caret-hover-color:    @navbar-default-link-hover-color;
-@navbar-default-caret-active-color:   @navbar-default-link-active-color;
+@navbar-default-caret-hover-color:    @navbar-default-link-color;
+@navbar-default-caret-active-color:   @navbar-default-link-color;
 
 // Navbar brand label
-@navbar-default-brand-color:          @navbar-default-link-color;
+@navbar-default-brand-color:          @brand;
 @navbar-default-brand-hover-color:    @navbar-default-link-hover-color;
 @navbar-default-brand-hover-bg:       transparent;
 
@@ -239,7 +239,8 @@
 //
 //##
 
-@dropdown-background:        mix(@inverse, @brand, 94%);
+@dropdown-background:        @navbar-default-link-color;
+@dropdown-color:             @inverse;
 
 
 //== Iconbar

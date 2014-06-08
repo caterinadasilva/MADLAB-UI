@@ -10,11 +10,11 @@
 .container {
   margin-left: auto;
   margin-right: auto;
+  width: @screen-sm-max;
 }
 
 // For demo purposes only
 .demo-headline {
-  padding: 73px 0 60px;
   text-align: center;
 }
 .demo-logo {
@@ -75,9 +75,23 @@
     top: -8px !important;
   }  
 }
-.demo-headings {
-  margin-bottom: 12px;
-}
+
+  .demo-heading-note,
+  .demo-text-note {
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    line-height: 13px;
+    color: mix(desaturate(@brand, 25%), white, 34%);
+    font-weight: 400;
+    vertical-align: middle;
+  }
+  .demo-text-note {
+    bottom: auto;
+    top: 10px;
+  }
+
 .demo-tiles {
   margin-bottom: 46px
 }
