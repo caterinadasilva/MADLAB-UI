@@ -31,7 +31,7 @@
     .btn {
       width: 100%;
       border-radius: initial;
-      
+            
     }
     .dropdown-menu {
       width: 100%;
@@ -43,7 +43,7 @@
   // Button Sizes
   // --------------------------------------------------
   .btn {
-    width: 220px; // Default select width until .span* is applied
+    width: 200px; // Default select width until .span* is applied
     border-radius: initial;
     
     // Huge
@@ -51,25 +51,29 @@
       .filter-option {
         left: 20px;
         right: 40px;
-        top: 13px;
+        top: 15px;
       }
       .caret {
-        right: 20px;        
+        font-size: @icon-xl;
+        right: 25px;        
       }
     }
     
     // Large
     &.btn-lg {
       .filter-option {
-        left: 18px;
-        right: 38px;
+        left: 20px;
+        right: 35px;
       }
+      .caret {
+        font-size: @icon-large;
+        }
     }
     
     // Small
     &.btn-sm {
       .filter-option {
-        left: 13px;
+        left: 20px;
         right: 33px;
       }
       .caret {
@@ -99,10 +103,10 @@
       top: 10px;
     }
     .caret {
+    font-size:@icon-medium;
       position: absolute;
-      right: 16px;
-      top: 50%;
-      margin-top: -3px;
+      right: 25px;
+      top: 25%;
     }
     .dropdown-toggle {
       border-radius: initial;
@@ -149,5 +153,59 @@
   // Caret
   .caret {
     .caret(@inverse);
+  }
+}
+
+.select-brand{
+    .button-variant(@inverse, @btn-brand-color, @btn-brand-active, @btn-brand-active);
+    }
+
+.select-default{
+    .button-variant(@inverse, @soft-grey, @grey, @dark-grey);
+    }
+    
+.select-form{
+  color: @soft-grey;
+  background-color: @inverse;
+  border-color: @soft-grey;
+
+  .caret {
+    .caret(@soft-grey);
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @dark-grey;
+    background-color: @inverse;
+    border-color: @grey;
+    
+    .caret {
+    .caret(@grey);
+  }
+  }
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+          color: @dark-grey;
+    background: @inverse;
+    border-color: @dark-grey;
+    
+      .caret {
+    .caret(@dark-grey);
+  }
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @inverse;
+    }
   }
 }

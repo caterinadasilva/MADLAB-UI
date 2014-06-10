@@ -31,10 +31,14 @@ String.prototype.repeat = function(num) {
       $(this).toggleClass("todo-done");
     });
 
-    // Custom Selects
-    $("select[name='huge']").selectpicker({style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse'});
-    $("select[name='herolist']").selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
-    $("select[name='info']").selectpicker({style: 'btn-info'});
+    // Custom Select Style
+    $("select[name='brand']").selectpicker({style:'select-brand', menuStyle: 'dropdown-brand'});
+    $("select[name='default']").selectpicker({style: 'select-default', menuStyle: 'dropdown-default'});
+    $("select[name='form']").selectpicker({style: 'select-form', menuStyle: 'dropdown-form'});
+
+    // Custom Select Sizes
+    $("select[name='small']").selectpicker({style:'small-select'});
+    $("select[name='big']").selectpicker({style: 'big-select'});
 
     // Tooltips
     $("[data-toggle=tooltip]").tooltip("show");

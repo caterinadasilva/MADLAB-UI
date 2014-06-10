@@ -78,15 +78,6 @@
   .button-variant(@btn-success-color, @btn-success-bg, @btn-hover-success-bg, @btn-success-active);
 }
 
-.btn-embossed {
-  .box-shadow(inset 0 -2px 0 fade(black, 15%));
-  
-  &.active,
-  &:active {
-    .box-shadow(inset 0 2px 0 fade(black, 15%));
-  }
-}
-
 .btn-wide {
   min-width: 140px;
   padding-left: 30px;
@@ -121,28 +112,36 @@
 // --------------------------------------------------
 
 .btn-hg {
-  .button-size(13px, 20px, @btn-font-size-hg, @btn-line-height-hg, @border-radius-large);
-  .icon {
+  .button-size(10px, 20px, @btn-font-size-hg, @btn-line-height-hg, @border-radius-large);
+  font-family: @especial;
+    
+    .icon {
     font-size: @icon-large;
-    top: 4px;
+    top: 5px;
     }
 }
+
+.btn-hg-icon {
+    .btn-hg;
+    padding-top: 5px;
+}
+
 .btn-lg {
-  .button-size(10px, 19px, @btn-font-size-lg, @btn-line-height-lg, @border-radius-large);
+  .button-size(10px, 20px, @btn-font-size-lg, @btn-line-height-lg, @border-radius-large);
     .icon {
     font-size: @icon-medium;
-    top: 2px;
+    top: 3px;
     }
 }
 .btn-sm {
-  .button-size(9px, 13px, @btn-font-size-sm, @btn-line-height-sm, @border-radius-base);
+  .button-size(10px, 10px, @btn-font-size-sm, @btn-line-height-sm, @border-radius-base);
     .icon {
     font-size: @icon-normal;
         top: 2px;
     }
 }
 .btn-xs {
-  .button-size(6px, 9px, @btn-font-size-xs, @btn-line-height-xs, @border-radius-base);
+  .button-size(5px, 10px, @btn-font-size-xs, @btn-line-height-xs, @border-radius-base);
     .icon {
     font-size: @icon-tiny;
     top: 1px;

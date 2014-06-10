@@ -89,7 +89,8 @@
 @icon-tiny:             9px;
 @icon-normal:           12px;
 @icon-medium:           18px;
-@icon-large:            30px;
+@icon-large:            25px;
+@icon-xl:               30px;
 
 
 // == Componentes
@@ -113,7 +114,7 @@
 @btn-font-size-xs:           ceil(@component-font-size-base * 0.780);   // ~12px
 @btn-font-size-sm:           floor(@component-font-size-base * 0.867); // ~13px
 @btn-font-size-lg:           ceil(@component-font-size-base * 1.133);  // ~17px
-@btn-font-size-hg:           floor(@component-font-size-base * 1.467); // ~22px
+@btn-font-size-hg:           floor(@component-font-size-base * 1.57); // ~22px
 
 @btn-line-height-base:       1.4;   // ~21px
 @btn-line-height-hg:         1.227; // ~27px
@@ -211,7 +212,7 @@
 @navbar-default-link-color:           @soft-black;
 @navbar-default-link-hover-color:     transparent;
 @navbar-default-link-hover-bg:        @soft-grey;
-@navbar-default-link-active-color:    @inverse;
+@navbar-default-link-active-color:    @brand;
 @navbar-default-link-active-bg:       @soft-grey;
 @navbar-default-link-disabled-color:  @grey;
 @navbar-default-link-disabled-bg:     @soft-grey;
@@ -239,9 +240,9 @@
 //
 //##
 
-@dropdown-background:        @navbar-default-link-color;
-@dropdown-color:             @inverse;
-
+@dropdown-bg:               @navbar-default-link-color;
+@dropdown-color:            @inverse;
+@dropdown-brand-bg:         @navbar-default-brand-color;
 
 //== Iconbar
 //

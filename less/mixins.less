@@ -562,22 +562,40 @@
   }
 }
 
-// Dropdown arrow
-// -------------------------
-.dropdown-arrow(@color: @brand; @top: 5px; @left: 15px; @size: 9px) {
-  &:before {
-    content: "";
-    border-style: solid;
-    border-width: 0 @size @size @size;
-    border-color: transparent transparent @color transparent;
-    height: 0;
-    position: absolute;
-    left: @left;
-    top: @top;
-    width: 0;
-    // Make corners smooth
-    -webkit-transform: rotate(360deg);
-  }
+// Dropdown variants
+.dropdown(@color: @dropdown-bg, @mix-color: @dark-white){
+        li {
+            background-color: @color;
+            &.active,
+            &.selected {
+              > a,
+              > a.highlighted {
+                background: mix(@color, @mix-color, 80%);
+        
+                &:hover,
+                &:focus {
+                background: mix(@color, @mix-color, 80%);                  
+                    }
+                  }
+                }
+            > a {
+        
+              &:hover,
+              &:active,
+              &:focus {
+                background: mix(@color, @mix-color, 80%);
+              }
+        
+              &.highlighted {
+                background: mix(@color, @mix-color, 80%);
+        
+                &:hover,
+                &:focus {
+                background: mix(@color, @mix-color, 80%);
+                        }
+                    }
+                }
+            }
 }
 
 // Button variants
@@ -645,11 +663,6 @@
 .swap-dialog-color(@color) {
   background-color: mix(@color, white, 9%);
   border-top-color: mix(@color, white, 20%);
-}
-
-.dropdown-arrow-inverse {
-  border-bottom-color: @brand !important;
-  border-top-color: @brand !important;
 }
 
 .swap-iconbar-color(@color) {

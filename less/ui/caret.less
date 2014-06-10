@@ -3,28 +3,18 @@
 // --------------------------------------------------
 
 .caret {
-  border-width: 8px 6px;
-  border-bottom-color: @brand;  
-  border-top-color: @brand;
-  border-style: solid;
-  border-bottom-style: none;
   .transition(.25s);
   .scale(1.001);
+  font-size: @icon-normal;
+  border: none;
+  display: inline;
 }
 
 .caret(@color: @brand) {
-  border-bottom-color: @color;
-  border-top-color: @color;
+    color: @color;
 }
 
 .dropup .caret,
 .dropup .btn-lg .caret,
 .navbar-fixed-bottom .dropdown .caret {
-  border-bottom-width: 8px;
-}
-
-.btn-lg .caret {
-  border-top-width: 8px;
-  border-right-width: 6px;
-  border-left-width: 6px;
 }

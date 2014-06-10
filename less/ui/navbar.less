@@ -159,7 +159,7 @@
   &:hover,
   &:focus {
     outline: none;
-    color: @navbar-default-link-color;
+    color: @navbar-default-link-active-color;
   
     &:before {
       color: @link-hover-color;
@@ -196,23 +196,20 @@
   }
   
   .dropdown-toggle .caret {
-    border-top-color: @navbar-default-link-color;
-    border-bottom-color: @navbar-default-link-color;
-    border-width: 8px 6px 0;
-    margin-left: @grid-gutter/2;
+    .caret(@navbar-default-link-color);
+    margin-left: @grid-gutter/4;
   }
   > li > a:hover,
   > li > a:focus,
   .open > a:focus,
   .open > a:hover {
     background-color: transparent;
-    color: @navbar-default-link-color;
-    border-bottom: 3px solid @navbar-default-link-color;
+    color: @navbar-default-link-active-color;
+    border-bottom: 3px solid @navbar-default-link-active-color;
     opacity: 0.8;
     
     .caret {
-      border-top-color: @navbar-default-link-color;
-      border-bottom-color: @navbar-default-link-color;
+      .caret(@navbar-default-link-active-color);
     }
   }
   
@@ -348,19 +345,16 @@
   .navbar-nav {
     // Caret text color
     > .dropdown > a .caret {
-      border-top-color: @navbar-default-caret-color;
-      border-bottom-color: @navbar-default-caret-color;
+      .caret(@navbar-default-caret-color);
     }
     // Caret should match text color on active
     > .active > a .caret {
-      border-top-color: @navbar-default-caret-active-color;
-      border-bottom-color: @navbar-default-caret-active-color;
+        .caret(@navbar-default-caret-active-color);
     }
     // Caret should match text color on hover
     > .dropdown > a:hover .caret,
     > .dropdown > a:focus .caret {
-      border-top-color: @navbar-default-caret-hover-color;
-      border-bottom-color: @navbar-default-caret-hover-color;
+        .caret(@navbar-default-caret-hover-color);
     }    
     
     // Remove background color from open dropdown
@@ -370,10 +364,7 @@
       &:focus {
         background-color: @navbar-default-link-active-bg;
         color: @navbar-default-link-active-bg;
-        .caret {
-          border-top-color: @navbar-default-caret-active-color;
-          border-bottom-color: @navbar-default-caret-active-color;
-        }
+        .caret(@navbar-default-caret-active-color);
       }
     } 
 
@@ -411,59 +402,63 @@
 }
 
 .navbar-meta {
+    .navbar-nav {
+        > li > a {
+            font-family: @mono;
+            color: @inverse;
+            border-right: 1px solid @dark-white;
+            text-transform: none;
+            font-variant: normal;
+            height: @grid-gutter*2;
+            padding: 10px;
+            letter-spacing: 1px;
+            
+            > .icon{
+                display: block;
+                font-size: @icon-medium;
+                padding-top: 1px;
+                padding-left: 1px;
+                }
+                
+          &:hover,
+          &:focus {
+            color: @inverse;
+            border-bottom: none;
+            }
+          }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @inverse;
+          }
+        }  
+      }
+    
     .pregrado{> li > a {background-color: @color-pregrado;}}
     .titulo{> li > a {background-color: @color-titulo;}}
     .postgrado{> li > a {background-color: @color-postgrado;}}
     .inv-academica{> li > a {background-color: @color-inv-academica;}}
     .externo{> li > a {background-color: @color-externo;}}
-    
-    .navbar-nav {
-    .icon{
-        font-size: @icon-medium;
-    } 
-        
-    > li > a {
-        font-family: @mono;
-        color: @inverse;
-        border-right: 1px solid @dark-white;
-        text-transform: none;
-        font-variant: normal;
-        height: @grid-gutter*2;
-        
-      &:hover,
-      &:focus {
-        color: @inverse;
-        border-bottom: none;
-      }
     }
-    > .active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @inverse;
-      }
-    }
-  }
-}
 
 //
 // Dropdown
 // --------------------------------------------------
 
 .dropdown-menu {
-  background-color: @dropdown-background;
-  color: @dropdown-color;
-  border: none;
-  display: block;
-  margin-top: 8px;
-  opacity: 0;
-  padding: 0;
-  visibility: hidden;
-  .box-shadow(none);
-  .transition(.25s);
+    color: @dropdown-color;
+    border: none;
+    display: block;
+    margin-top: 8px;
+    opacity: 0;
+    padding: 0;
+    visibility: hidden;
+    .box-shadow(none);
+    .transition(.25s);
   
 .divider {
-    margin:5px;
+    margin: 0px;
   }
 
   // Opened state
@@ -474,56 +469,58 @@
   }
   
   li {
-
+    background: @dropdown-bg;
     &.active,
     &.selected {
       > a,
       > a.highlighted {
-        background: none;
         color: @dropdown-color;
-        text-decoration: underline;
+        background: mix(@dropdown-bg, @dark-white, 90%);
 
         &:hover,
         &:focus {
-          background: none;
-          color: @dropdown-color;
+        background: mix(@dropdown-bg, @dark-white, 90%);
+        color: @dropdown-color;
+        opacity: 1;
           
         }
       }
     }
       
     > a {
-      color: @dropdown-color;
-      text-decoration: none;
-      .clearfix();
-      .transition(background-color .25s);
-      padding: 5px !important;
+        font-size: @font-size-base;
+        color: @dropdown-color;
+        text-decoration: none;
+        .clearfix();
+        .transition(background-color .25s);
+        list-style-type: none;
+        text-decoration: none;
+        font-weight: 200;
+        padding: 5px;
+        padding-left: 10px;
 
       &:hover,
       &:active,
       &:focus {
-        background: none;
+        background: mix(@dropdown-bg, @dark-white, 90%);
         color: inherit;
         outline: none;
-        text-decoration: underline;
       }
 
       &.highlighted {
-        background: mix(@dropdown-background, @soft-black, 1%);
+        background: mix(@dropdown-bg, @dark-white, 90%);
 
         &:hover,
         &:focus {
-        background: mix(@dropdown-background, @soft-black, 1%);
+        background: mix(@dropdown-bg, @dark-white, 90%);
         }
       }
       &:before {
         float: right;
-        margin-top: 3px;
       }
     }
     }
 }
-
 
 // Dropdown expands to top
 .dropup,
@@ -531,11 +528,76 @@
   .dropdown-menu {
     margin-bottom: 8px;
   }
-  
-  .dropdown-arrow {
+    .dropdown-arrow {
     border-bottom: none;
     border-top: 8px outset mix(@inverse, @brand, 94%);
     bottom: 100%;
     top: auto;
+  }
+}
+
+.dropdown-arrow {
+  border-style: solid;
+  border-width: 0 8px 7px;
+  border-color: transparent transparent mix(@inverse, @brand, 94%) transparent;
+  height: 0;
+  margin-top: 0;
+  opacity: 0;
+  position: absolute;
+  right: 19px;
+  top: 100%;
+  width: 0;
+  z-index: 10;
+  -webkit-transform: rotate(360deg); // Make corners smooth
+  .transition(.25s);
+}
+
+.dropdown-brand{
+    .dropdown(@brand);
+        }
+    
+.dropdown-default{
+    .dropdown(@grey, @navbar-default-link-color);
     }
+
+.dropdown-form{
+        color: @soft-grey;
+           li {
+            background-color: @inverse;
+            &.active,
+            &.selected {
+              > a,
+              > a.highlighted {
+                  color: @grey;
+                background: mix(@inverse, @grey, 80%);
+        
+                &:hover,
+                &:focus {
+                    color: @grey;
+                background: mix(@inverse, @grey, 80%);                  
+                    }
+                  }
+                }
+            > a {
+                
+        color: @dark-grey;
+              &:hover,
+              &:active,
+              &:focus {
+                  color: @dark-grey;
+                background: mix(@inverse, @grey, 80%);
+              }
+        
+              &.highlighted {
+                  color: @dark-grey;
+                background: mix(@inverse, @grey, 80%);
+        
+                &:hover,
+                &:focus {
+                    color: @dark-grey;
+                background: mix(@inverse, @grey, 80%);
+                        }
+                    }
+                }
+            }
 }
