@@ -28,9 +28,15 @@
     width: 100%;
   }
 }
+
+
 // Panels delimiter
+.first { margin-top: @grid-gutter*2; }
+        
+.last { margin-bottom: @grid-gutter*2; }
+
 .demo-row {
-    margin: @grid-gutter 0;
+    margin-top: @grid-gutter;
 
     .demo-text-note {
     display: block;
@@ -47,8 +53,9 @@
   &.typography-row {
     .demo-content {
       float: none;
-      width: auto;    
+      width: inherit;    
       clear: both; 
+      .clearfix;
     }
     .demo-type-example {
       padding-left: 25%;

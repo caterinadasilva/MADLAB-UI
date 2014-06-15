@@ -402,6 +402,7 @@
 }
 
 .navbar-meta {
+    float: right;
     .navbar-nav {
         > li > a {
             font-family: @mono;
@@ -601,3 +602,33 @@
                 }
             }
 }
+
+
+.nav-tabs + .nav-justified {
+    color: @soft-black;
+       > li {            
+            > a {
+                background-color: @dark-white;
+                color: @soft-black;
+                text-decoration: none;
+                font-weight: 200;
+                border-radius: @border-radius-large;
+                margin-right: @grid-gutter/2; 
+                
+              &:hover,
+              &:active,
+              &:focus {
+                background: @inverse;
+              }
+        
+              &.highlighted {
+                background: @inverse;
+        
+                &:hover,
+                &:focus {
+                background: @inverse;
+                        }
+                    }
+                }
+            }
+    }

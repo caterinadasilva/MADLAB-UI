@@ -533,25 +533,6 @@
   }
 }
 
-.margin-cero{
-        margin: 0;
-    }
-
-.first {
-        .margin-cero;
-        margin-top: @grid-gutter*2;
-        }
-        
-.last {
-    .margin-cero;
-        margin-bottom: @grid-gutter*2;
-        }
-
-.centered{
-    margin-left: auto;
-    margin-right: auto;
-    }
-
 // COMPONENT MIXINS
 // --------------------------------------------------
 
@@ -646,17 +627,18 @@
 
 // Social button variants
 // -------------------------
-.social-button-variant(@color; @background) {
-  color: @color;
+.social-button-variant(@color-base, @color-active, @background) {
+  color: @color-base;
   background-color: @background;
+  border-color: @color-base;
+
 
   &:hover,
-  &:focus {
-    background-color: mix(@background, white, 80%);
-  }
-  &:active,
+  &:focus,
+    &:active,
   &.active {
-    background-color: mix(@background, black, 85%);
+    border-color: @color-active;
+    color: @color-active;
   }
 }
 
