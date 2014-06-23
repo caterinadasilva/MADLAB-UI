@@ -13,30 +13,32 @@
   .tt-dropdown-menu {
     width: 100%;
     margin-top: 5px;    
-    border: 2px solid @brand;
-    padding: 5px 0;
-    color: @brand;
-    background-color: mix(@soft-grey, @brand, 20%);
-    border-radius: @border-radius-large;
+    border: none;
+    margin-top: 0 !important;
+    color: @grey;
+    background-color: @inverse;
+    border-radius: initial;
+    opacity: 0.9;
   }
 
   .tt-suggestion {
     p {
-      padding: 6px 14px;
-      font-size: ceil(@component-font-size-base * 0.933);
-      line-height: 1.429; // ~20px
+      padding: 5px 10px;
+      font-size: @input-font-size-large;
+      line-height: @input-line-height-large;
       margin: 0;
+      font-weight: 300;
     }
 
     &:first-child,
     &:last-child {
       p {
-        padding: 6px 14px;
+        padding: 5px 10px;
       }
     }
     &.tt-is-under-cursor {
-      color: @inverse;
-      background-color: mix(@brand, black, 85%);
+        color: @dark-grey;
+        background: mix(@inverse, @grey, 80%);
     }
   }
 }

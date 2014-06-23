@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .pallete-item {
-  width: 140px;
+  width: 160px;
   float: left;
   margin: 0 0 20px 20px;
 }
@@ -12,8 +12,9 @@
   line-height: 1.214; // ~17px
   color: @inverse;
   margin: 0;
-  padding: 15px;
+  padding: @grid-gutter @grid-gutter/2;
   text-transform: uppercase;
+  font-weight: 400;
 
   dt,
   dd {
@@ -54,8 +55,8 @@
 
 
 
-.palette-dark-white {
-  color: @grey;
+.palette-dark-white, .palette-white {
+  color: @dark-grey;
 }
 
 // Palette paragraph
@@ -65,7 +66,7 @@
   line-height: 17px;
 
   span {
-    color: @soft-grey;
+    color: @dark-white;
   }  
 }
 

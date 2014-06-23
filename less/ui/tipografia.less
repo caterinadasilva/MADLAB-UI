@@ -87,6 +87,11 @@ small,
   font-weight: 300;
 }
 
+b, strong {
+    font-weight: 600;
+    color: mix(@brand, @soft-black, 80%);
+    }
+
 // Énfasis por contexto
 .text-muted {
   color: @text-muted;
@@ -197,6 +202,8 @@ blockquote {
     line-height: @line-height-base;
     font-style: italic;
     color: @blockquote-small-color;
+    text-transform: none;
+    font-variant: normal;
 
     &:before {
       content: "";
@@ -224,3 +231,45 @@ address {
   line-height: @line-height-base;
 }
 
+// Labels
+
+.label{
+      font-weight: 400;
+      line-height: 1;
+      color: @inverse;
+      border-radius: initial;
+      padding: @grid-gutter/4 @grid-gutter/3;
+      text-align: center;
+      vertical-align: baseline;
+      text-transform: uppercase;
+      font-variant: small-caps;
+
+    }
+    
+.label-default {
+  .label-variant(@btn-default-color);
+}
+
+.label-brand {
+  .label-variant(@brand);
+}
+
+.label-pregrado {
+  .label-variant(@pregrado);
+}
+
+.label-titulo {
+  .label-variant(@titulo);
+}
+
+.label-postgrado {
+  .label-variant(@postgrado);
+}
+
+.label-inv-academica {
+  .label-variant(@inv-academica);
+}
+
+.label-externo {
+  .label-variant(@externo);
+}

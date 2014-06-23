@@ -441,6 +441,117 @@
     .postgrado{> li > a {background-color: @color-postgrado;}}
     .inv-academica{> li > a {background-color: @color-inv-academica;}}
     .externo{> li > a {background-color: @color-externo;}}
+}
+    
+.nav-pills {
+    > li > a {
+            color: @inverse;
+            font-size: @font-size-h4;
+            font-weight: 200;
+            height: @grid-gutter*4;
+            padding: @grid-gutter;
+            letter-spacing: 1px;
+            background-color: mix(@brand, @dark-white, 80%);
+            text-decoration: none;
+            border-radius: initial;
+            
+          &:hover,
+          &:focus {
+            background-color: mix(@brand, @soft-black, 90%);
+            }
+          }
+
+        > li.active > a {
+          &,
+          &:hover,
+          &:focus {
+                background-color: @brand;
+          }
+        }  
+    }
+    
+.nav-tabs {
+  border-bottom: transparent;
+  > li {
+
+    > a {
+      line-height: @line-height-base;
+      border: 1px solid transparent !important;
+      border-radius: @border-radius-base @border-radius-base 0 0 !important;
+      text-decoration: none;
+      font-size: @btn-font-size-hg;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 0 @grid-gutter/2;
+      
+      &:hover,
+      &:focus {
+        border-color: none;
+        border-radius: @border-radius-large !important;
+        color: @brand;
+        background: mix(@brand, @dark-white, 20%);
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @brand;
+        background-color: @inverse;
+        border: 1px solid @inverse;
+        border-bottom-color: transparent;
+        cursor: default;
+        border-radius: @border-radius-base @border-radius-base 0 0 !important;
+      }
+    }
+  }
+}
+
+.nav-tabs-justified {
+  border-bottom: 0;
+
+  > li > a {
+    // Override margin from .nav-tabs
+    margin-right: 0;
+    border-radius: @border-radius-base;
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    border: none;
+  }
+}
+
+.nav-tabs + .nav-justified {
+    color: @soft-black;
+       > li {            
+            > a {
+                background-color: @dark-white;
+                color: @soft-black;
+                text-decoration: none;
+                font-weight: 200;
+                border-radius: @border-radius-base;
+                margin-right: @grid-gutter/2; 
+                
+              &:hover,
+              &:active,
+              &:focus {
+                background: @inverse;
+              }
+        
+              &.highlighted {
+                background: @inverse;
+        
+                &:hover,
+                &:focus {
+                background: @inverse;
+                        }
+                    }
+                }
+            }
     }
 
 //
@@ -465,7 +576,7 @@
   // Opened state
   .open > & {
     margin-top: 0 !important;
-    opacity: 0.8;
+    opacity: 0.9;
     visibility: visible;
   }
   
@@ -496,7 +607,7 @@
         .transition(background-color .25s);
         list-style-type: none;
         text-decoration: none;
-        font-weight: 200;
+        font-weight: 300;
         padding: 5px;
         padding-left: 10px;
 
@@ -562,73 +673,43 @@
     }
 
 .dropdown-form{
-        color: @soft-grey;
-           li {
-            background-color: @inverse;
-            &.active,
-            &.selected {
-              > a,
-              > a.highlighted {
-                  color: @grey;
-                background: mix(@inverse, @grey, 80%);
+color: @soft-grey;
+   li {
+    background-color: @inverse;
+    &.active,
+    &.selected {
+      > a,
+      > a.highlighted {
+          color: @grey;
+        background: mix(@inverse, @grey, 80%);
+
+        &:hover,
+        &:focus {
+            color: @grey;
+        background: mix(@inverse, @grey, 80%);                  
+            }
+          }
+        }
+    > a {
         
-                &:hover,
-                &:focus {
-                    color: @grey;
-                background: mix(@inverse, @grey, 80%);                  
-                    }
-                  }
-                }
-            > a {
-                
-        color: @dark-grey;
-              &:hover,
-              &:active,
-              &:focus {
-                  color: @dark-grey;
-                background: mix(@inverse, @grey, 80%);
-              }
-        
-              &.highlighted {
-                  color: @dark-grey;
-                background: mix(@inverse, @grey, 80%);
-        
-                &:hover,
-                &:focus {
-                    color: @dark-grey;
-                background: mix(@inverse, @grey, 80%);
-                        }
-                    }
+    color: @dark-grey;
+      &:hover,
+      &:active,
+      &:focus {
+          color: @dark-grey;
+        background: mix(@inverse, @grey, 80%);
+      }
+
+      &.highlighted {
+          color: @dark-grey;
+        background: mix(@inverse, @grey, 80%);
+
+        &:hover,
+        &:focus {
+            color: @dark-grey;
+        background: mix(@inverse, @grey, 80%);
                 }
             }
-}
-
-
-.nav-tabs + .nav-justified {
-    color: @soft-black;
-       > li {            
-            > a {
-                background-color: @dark-white;
-                color: @soft-black;
-                text-decoration: none;
-                font-weight: 200;
-                border-radius: @border-radius-large;
-                margin-right: @grid-gutter/2; 
-                
-              &:hover,
-              &:active,
-              &:focus {
-                background: @inverse;
-              }
-        
-              &.highlighted {
-                background: @inverse;
-        
-                &:hover,
-                &:focus {
-                background: @inverse;
-                        }
-                    }
-                }
-            }
+        }
     }
+}

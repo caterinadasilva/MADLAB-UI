@@ -78,11 +78,32 @@
   .button-variant(@btn-success-color, @btn-success-bg, @btn-hover-success-bg, @btn-success-active);
 }
 
+.btn-pregrado {
+  .button-variant(@color-pregrado, @btn-bg, @color-pregrado, @btn-default-active);
+}
+.btn-titulo {
+  .button-variant(@color-titulo, @btn-bg, @color-titulo, @btn-default-active);
+}
+.btn-postgrado  {
+  .button-variant(@color-postgrado, @btn-bg, @color-postgrado, @btn-default-active);
+}
+.btn-investigacion {
+  .button-variant(@color-inv-academica, @btn-bg, @color-inv-academica, @btn-default-active);
+}
+.btn-externo {
+  .button-variant(@color-externo, @btn-bg, @color-externo, @btn-default-active);
+}
+
 .btn-wide {
   min-width: 140px;
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.btn-meta{
+    .btn-brand;
+    font-family: @font-family-monospace;
+    }
  
 // Link buttons
 // -------------------------
@@ -161,4 +182,162 @@
 
 .btn-block {
   white-space: normal;
+}
+
+//
+// = Grupos de botones = 
+// ---------------------
+
+// Button carets
+//
+// Match the button text color to the arrow/caret for indicating dropdown-ness.
+
+.caret {
+  .btn-default & {
+    border-top-color: @btn-default-color;
+  }
+  .btn-brand &,
+  .btn-success &,
+  .btn-alert &,
+  .btn-default & {
+    border-top-color: @inverse;
+  }
+}
+.dropup {
+  & .btn-default .caret {
+    border-bottom-color: @btn-default-color;
+  }
+  .btn-primary,
+  .btn-success,
+  .btn-warning,
+  .btn-danger,
+  .btn-info {
+   .caret {
+      border-bottom-color: @inverse;
+    }
+  }
+}
+
+// Sizing
+//
+// Remix the default button sizing classes into new ones for easier manipulation.
+
+.btn-group-xs > .btn { .btn-xs(); }
+.btn-group-sm > .btn { .btn-sm(); }
+.btn-group-lg > .btn { .btn-lg(); }
+.btn-group-gh > .btn { .btn-hg(); }
+
+
+.btn-group {
+  > .btn {
+    & + .btn {
+      margin-left: 0;
+    }
+    & + .dropdown-toggle {
+      border-left: 2px solid fade(@brand, 15%);
+      padding-left: 12px;
+      padding-right: 12px;
+
+      .caret {
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+    }
+    &.btn-gh + .dropdown-toggle {
+      .caret {
+        margin-left: 7px;
+        margin-right: 7px;
+      }
+    }
+    &.btn-sm + .dropdown-toggle {
+      .caret {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  
+  .icon {
+    position: relative;
+    display: inline-block;
+    font-family: 'madlab';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size:  @icon-large;
+    margin-right:  0;
+    color: @soft-black;
+    border-radius: initial;
+    border: none;
+    
+      &:hover,
+  &:focus {
+    color: @soft-grey;
+    background-color: transparent;
+     }
+
+  &:active,
+  &.active {
+    color: @soft-grey;
+    background-color: transparent;
+        }
+    }
+  
+}
+
+.dropdown-toggle {
+  .caret {
+    margin-left: 8px;
+  }
+}
+
+.btn-group > .btn,
+.btn-group > .dropdown-menu,
+.btn-group > .popover {
+  font-weight: 400;
+}
+
+.btn-group:focus .dropdown-toggle {
+  outline: none;
+  .transition(.25s);
+}
+
+// Botón clickeable para mostrar el menú
+// Remove the gradient and set the same inset shadow as the :active state
+.btn-group.open .dropdown-toggle {
+  color: fade(@btn-default-color, 75%);
+  .box-shadow(none);
+}
+
+// Other button locations
+// Button with icon inside
+.btn-toolbar .btn {
+    font-size: @icon-xl;
+  &.active {
+    color: @btn-default-color;
+  }
+  > [class^="icon-"] {
+    font-size: @icon-xl;
+    margin: 0 1px;
+  }
+}
+
+.social {
+    .btn {
+    font-size: @icon-medium;
+    border: 1px solid @inverse;
+    padding-bottom: 5px;
+    .social-button-variant(@btn-default-color, @btn-brand-color);
+    }
+    .small {
+        font-size: @icon-normal;
+        }
+
+    .fb {.social-button-variant(@btn-default-color, @facebook);}
+    .tw {.social-button-variant(@btn-default-color, @twitter);}
+    .ing {.social-button-variant(@btn-default-color, @instagram);}
+    .fs {.social-button-variant(@btn-default-color, @foursquare);}
+    .gh{.social-button-variant(@btn-default-color, @github);}
+    .green{.social-button-variant(@btn-default-color, @success);}
+    .red{.social-button-variant(@btn-default-color, @alert);}
 }

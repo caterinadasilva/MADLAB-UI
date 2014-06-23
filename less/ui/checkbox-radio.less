@@ -19,7 +19,7 @@
   // Replace icons
   // --------------------------------------------------
   .icons {
-    color: @soft-grey;
+    color: mix(@brand, @soft-grey, 50%);
     display: block;
     height: 20px;
     left: 0;
@@ -64,14 +64,14 @@
 
   // Checked State
   &.checked {
-    color: @success;
+    color: @brand;
 
     .first-icon {
       .opacity(0);
     }
     .second-icon {
       .opacity(1);
-      color: @success;
+      color: @brand;
      .transition(color .25s linear);
     }
   }
@@ -79,11 +79,10 @@
   // Disabled state
   &.disabled {
     cursor: default;
-    color: mix(@soft-grey, white, 38%);
+    color: @soft-grey;
 
     .icons {
-      color: mix(@soft-grey, white, 38%);
-    }
+      color: @soft-grey;
     .first-icon {
       .opacity(1);
     }
@@ -92,46 +91,32 @@
     }
     &.checked {
       .icons {
-        color: mix(@soft-grey, white, 38%);
+        color:@soft-grey;
       }
       .first-icon {
         .opacity(0);
       }
       .second-icon {
         .opacity(1);
-        color: mix(@soft-grey, white, 38%);
+        color: @soft-grey;
       }
     }
   }
-
+}
   // Alternate Color
   // --------------------------------------------------
 
   // Primary
-  &.primary {
+  &.success {
     .icons {
-      color: @brand;
+      color: mix(@success, @soft-grey, 50%);
     }
     // Checked State
     &.checked {
       color: @success;
 
-      .icons {
+      .icons > .second-icon {
         color: @success;
-      }
-    }
-    // Disabled state
-    &.disabled {
-      cursor: default;
-      color: @soft-grey;
-
-      .icons {
-        color: @soft-grey;
-      }
-      &.checked {
-        .icons {
-          color: @soft-grey;
-        }
       }
     }
   }

@@ -97,16 +97,15 @@ String.prototype.repeat = function(num) {
     $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
 
         // Typeahead
-    if($('#typeahead-demo-01').length) {
-      $('#typeahead-demo-01').typeahead({
-        name: 'states',
+    if($('#typeahead-demo').length) {
+      $('#typeahead-demo').typeahead({
+        name: 'materiales',
         limit: 4,
-        local: ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
-        "Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky",
-        "Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri",
-        "Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota",
-        "North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina",
-        "South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
+        local: ["PVC espumado","MDF","ALUCOBOND","Madera natural","Foam-board","Poliuretano","Aluminio",
+        "Cobre","Níquel","Bronce","Cuero sintético","Fieltro","Tela","Tapiz","Caucho","Espuma","Goma",
+        "Goma Eva","Corcho","Madera de Balsa","Madera nativa","Placa aglomerado masisa","Trupán","Acero","Latón",
+        "Cartón corrugado","Cartón couché doble","Cartón couché simple","Cartón couché triple","Cartón madera","Cartón piedra",
+        "Cartón pluma","Acrílico", "Mica","PAI"]
       });
     }  
 

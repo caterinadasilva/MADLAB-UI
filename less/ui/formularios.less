@@ -70,13 +70,13 @@ label {
 // input[type="color"]
 
 .form-control {
-  border: 2px solid @soft-grey;
+  border: 1px solid @soft-grey;
   color: @grey;
-  font-family: @font-family-base;
+  font-family: @font-family-mono;
   font-size: @input-font-size-base;
   line-height: @input-line-height-base;
-  padding: 8px 12px;
-  height: 42px;
+  padding: 5px 10px;
+  height: @grid-gutter*2;
   -webkit-appearance: none;
   border-radius: @input-border-radius;
   .box-shadow(none);
@@ -107,7 +107,7 @@ label {
       border-color: @soft-grey;
     }
     &:focus {
-      border-color: @brand;
+      border-color: @grey;
     }
   }
 }

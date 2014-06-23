@@ -106,7 +106,7 @@
   }
   
   $.fn.radio.defaults = {
-    template: '<span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>'
+    template: '<span class="icons"><span class="first-icon icon-fontawesome-webfont-9"></span><span class="second-icon icon-fontawesome-webfont-51"></span></span>'
   }
 
 

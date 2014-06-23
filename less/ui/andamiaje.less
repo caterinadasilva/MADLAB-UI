@@ -12,7 +12,7 @@ body {
   line-height: @line-height-base;
   color: @text-color;
   background-color: @body-bg;
-  background-image:url("./img/graphy.png");
+  background: ~"url(./img/graphy.png) left 0 repeat";
   background-attachment:fixed;
 }
 
@@ -28,8 +28,8 @@ a {
     
   &:hover,
   &:focus {
-    color: @inverse;
-    background-color: @link-hover-color;
+    color: white;
+    background-color: @brand;
     text-decoration: none;
   }
   &:focus {
@@ -42,7 +42,7 @@ a {
 
 // Puntas redondas
 .img-rounded {
-  border-radius: @border-radius-large;
+  border-radius: @border-radius-small;
 }
 
 // Previsualización de imágenes

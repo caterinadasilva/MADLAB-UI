@@ -22,11 +22,17 @@
 @belize-hole:		rgba(41, 128, 185,1.0);
 @amethyst:		    rgba(155, 89, 182,1.0);
 
-@color-pregrado:        @sunflower;
-@color-titulo:          @pumpkin;
-@color-postgrado:       @amethyst;
-@color-inv-academica:   @belize-hole;
-@color-externo:         @turquoise;
+@color-pregrado:        @turquoise;
+@color-titulo:          @amethyst;
+@color-postgrado:       @belize-hole;
+@color-inv-academica:   @sunflower;
+@color-externo:         @pumpkin;
+
+@pregrado:        @color-pregrado;
+@titulo:          @color-titulo;
+@postgrado:       @color-postgrado;
+@inv-academica:   @color-inv-academica;
+@externo:         @color-externo;
 
 // === Colores del sitio ===
 @transparent:       rgba(0,0,0,0);
@@ -78,6 +84,7 @@
 
 @font-family-base:          @typography;
 @font-family-monospace:     @mono;
+@font-family-mono:          @mono;
 @font-family-demo:          @typography;
 
 @line-height-base:          1.72222; // 31/18
@@ -117,7 +124,7 @@
 @btn-font-size-xs:           ceil(@component-font-size-base * 0.780);   // ~12px
 @btn-font-size-sm:           floor(@component-font-size-base * 0.867); // ~13px
 @btn-font-size-lg:           ceil(@component-font-size-base * 1.133);  // ~17px
-@btn-font-size-hg:           floor(@component-font-size-base * 1.57); // ~22px
+@btn-font-size-hg:           floor(@component-font-size-base * 1.37); // ~22px
 
 @btn-line-height-base:       1.4;   // ~21px
 @btn-line-height-hg:         1.227; // ~27px
@@ -258,23 +265,23 @@
 //
 //##
 
-@progress-height:            20px;
+@progress-height:            @grid-gutter;
 
 
 // == Slider
 //
 //##
 
-@slider-height:              15px;
+@slider-height:              @grid-gutter;
 @slider-value-font-size:     floor(@component-font-size-base * 0.867); // ~13px;
 
 @slider-handle-bg:           mix(@brand, @grey, 85%);
-@slider-handle-hover-bg:     mix(@brand, white, 80%);
+@slider-handle-hover-bg:     mix(@brand, white, 10%);
 @slider-handle-active-bg:    mix(@brand, black, 85%);
 
 @slider-range-bg:            @brand;
 
-@slider-segment-bg:          mix(desaturate(@brand, 15%), white, 20%);
+@slider-segment-bg:          @soft-grey;
 
 
 //== Switch
@@ -386,9 +393,9 @@
 //** Headings small color
 @headings-small-color:        mix(@brand, @inverse, 12%);
 //** Blockquote small color
-@blockquote-small-color:      inherit;
+@blockquote-small-color:      mix(@brand, @dark-grey, 40%);
 //** Blockquote border color
-@blockquote-border-color:     mix(@brand, @inverse, 12%);
+@blockquote-border-color:     mix(@brand, @dark-white, 12%);
 //** Page header border color
 @page-header-border-color:    mix(@brand, @inverse, 12%);
 

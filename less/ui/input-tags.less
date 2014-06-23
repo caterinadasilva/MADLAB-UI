@@ -1,22 +1,19 @@
-//
-// Tags Input
-// --------------------------------------------------
-
 .tagsinput {
-  background: @white;
-  border: 1px solid @grey;
-  border-radius: @border-radius-large;
-  height: 80px;
-  margin-bottom: 18pxs;
-  padding: 5px 1px 1px 5px;
+  background: white;
+  border: 1px solid @brand;
+  border-radius: @input-border-radius;
+  height: 100px;
+  margin-bottom: 18px;
+  padding: 6px 1px 1px 6px;
   overflow-y: auto;
   text-align: left;
 
   .tag {    
-    border-radius: @border-radius-base;
-    background-color: @brand;
+    border-radius: @input-border-radius;
+    background-color: mix(@brand, @inverse, 70%);
     color: @inverse;
     font-size: ceil(@component-font-size-base * 0.933); // ~14px
+    font-weight: 200;
     cursor: pointer;
     display: inline-block;
     margin-right: 5px;
@@ -27,15 +24,16 @@
     position: relative;
     vertical-align: middle;
     .transition(.25s linear);
-
-    &:hover {
-      background-color: @soft-grey;
+    
+    &:focus, &:hover {
+      background-color: @brand;
       color: @inverse;
       padding-left: 12px;
       padding-right: 20px;
       
       .tagsinput-remove-link {
         color: @inverse;
+        background-color: transparent !important;
         opacity: 1;
         // Opacity fallback for IE
         display: block\9;
@@ -74,7 +72,7 @@
   z-index: 2;
   // Opacity fallback for IE
   display: none\9;
-  
+
   &:before {
     color: @inverse;
     content: "x";
@@ -88,9 +86,8 @@
 }
 
 .tagsinput-add {  
-  background-color: @grey;
-  border-radius: @border-radius-small;
-  color: @inverse;
+  background-color: transparent;
+  color: @soft-grey;
   cursor: pointer;
   display: inline-block;
   font-size: ceil(@component-font-size-base * 0.933); // ~14px
@@ -99,9 +96,9 @@
   padding: 7px 9px;
   vertical-align: top;
   .transition(.25s linear);
-  
+ 
   &:hover {
-    background-color: @brand;
+    color: @brand;
   }
   &:before {
     content: "Y";

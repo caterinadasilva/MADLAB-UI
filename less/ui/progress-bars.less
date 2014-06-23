@@ -4,7 +4,7 @@
 
 // Outer container
 .progress {
-  background: mix(@brand, white, 10%);
+  background: @slider-handle-hover-bg;
   border-radius: @progress-height;
   height: @progress-height;
   .box-shadow(none);
@@ -14,7 +14,7 @@
 .progress-bar {
   background: @brand;
   line-height: @progress-height;
-  .box-shadow(none);
+  .box-shadow(@soft-black);
 }
 
 // Variations

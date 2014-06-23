@@ -7,21 +7,40 @@
 // Utility mixins for greater good
 @import "mixins";
 
+.jumbotron{
+      z-index: 10000;
+    height: 100vh;
+    background-color: @brand;
+    }
+    
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: @screen-sm-max;
+  width: @screen-xs-max;
+}
+
+.sidebar-container{
+    position: relative;
+	z-index: 100;
 }
 
 // For demo purposes only
 .demo-headline {
-  text-align: center;
+    text-align: center;
+    margin: @grid-gutter*4 0 @grid-gutter*2 0;
 }
+
+.demo-header{
+    padding-top: 16%;
+    padding-bottom: 20%;
+            text-align: center;
+    }
+
 .demo-logo {
   .logo {
-    background: ~"url(./img/MADLAB-logo.svg) center 0 no-repeat";
+    background: ~"url(./img/MADLAB-logo-white.svg) center 0 no-repeat";
     background-size: 50%;
-    height: @grid-gutter*6px;
+    height: @grid-gutter*6;
     margin: 0 auto;
     overflow: hidden;
     text-indent: -9999em;
@@ -31,24 +50,19 @@
 
 
 // Panels delimiter
-.first { margin-top: @grid-gutter*2; }
+.first { 
+    .clearfix;
+    margin-top: @grid-gutter*3; 
+    h4 {
+        text-align: center;
+        margin-bottom: @grid-gutter*2;
+    }
+}
         
-.last { margin-bottom: @grid-gutter*2; }
+.last { margin-bottom: @grid-gutter*3; }
 
 .demo-row {
     margin-top: @grid-gutter;
-
-    .demo-text-note {
-    display: block;
-    width: 260px;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    font-size: 13px;
-    line-height: 13px;
-    color: mix(desaturate(@brand, 25%), white, 34%);
-    font-weight: 200;
-  }
   
   &.typography-row {
     .demo-content {
@@ -83,20 +97,19 @@
   }  
 }
 
-  .demo-heading-note,
-  .demo-text-note {
+  .demo-heading-note, .demo-text-note {
     display: block;
+    width: 260px;
     position: absolute;
+    top: 40%;
     left: 0;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 13px;
-    color: mix(desaturate(@brand, 25%), white, 34%);
-    font-weight: 400;
-    vertical-align: middle;
+    color: mix(@brand, white, 60%);
+    font-weight: 300;
   }
-  .demo-text-note {
-    bottom: auto;
-    top: 10px;
+   .demo-text-note{
+    top: 20%;
   }
 
 .demo-tiles {
@@ -130,50 +143,37 @@
   width: 80px;
 }
 
-// Shatches
-.demo-swatches-row {
-  [class*="col"] {
-    float: left;    
-    min-height: 1px;
-  }
-  .swatches-col {
-    width: 800px;
-    margin-left: -5px;
-  }
-  .swatches-desc-col {
-    width: 140px;
-    margin-left: 20px;
-  }
-}
-
 // Sidebar for Components navigation
 .demo-sidebar {
-  font-size: floor(@font-size-base * 0.778); // ~14px
-  line-height: 1.214; // ~17px
+  position: absolute;
+  float: left;
+  opacity: .7;
   height: 100%;
   left: 0;
   margin: 0;
   list-style-type: none;
   overflow: auto;
   position: fixed;
-  top: 0;
-  padding: 0;
-  width: 150px;
-  z-index: 10000;
-  background-color: mix(@brand, white, 6%);
+  top: 200px;
+  padding: @grid-gutter/2;
+  width: 140px;
+  z-index: 2000;
   -webkit-backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 
   li {
-    &:first-child {
-      a {
-        padding-top: 20px;
+    a {
+      color: @link-color;
+      text-decoration: none;
+      padding-left: @grid-gutter/4;
+        
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        text-decoration: none;
+        border-left: @brand 1px solid;
+        
       }
     }
+    }
   }
-
-  a {
-    display: block;
-    padding: 7px 20px;
-  }
-}
